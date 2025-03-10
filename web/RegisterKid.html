@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   SkillNest
+  </title>
+  <style> 
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .info-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%; 
+        }
+        .info-section h2 {
+            text-align: left;
+        }
+        .form-container {
+            display: grid;
+            gap: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin: 5px 0;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .profile-upload {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .profile-upload img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+        .profile-upload button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #000;
+            color: white;
+        }
+        .button-container {
+            grid-column: span 2;
+            display: flex;
+            justify-content:right;
+         
+        }
+        .button-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+
+        }
+        button a {
+    text-decoration: none;
+    color: white;  }
+
+        .cancel-btn {
+           
+            background-color: black; 
+        }
+        .register-btn {
+            background-color: black;
+           
+        }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+    <header>
+        <img src="images/SkillNest.png" alt="SkillNest" style="width: 70px; margin-left: 30px; margin-top: 30px;">
+        <h1>SkillNest</h1>
+        <div id='navigation'>
+            <a href="home.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="activities.html">Activities</a>
+            <a href="ParentDashBoard.html">Parent Dashboard</a>
+            <a href="admin.html">Admin</a>
+            <a href="coaches.html">Coaches</a>
+        </div>
+        <hr>
+    </header>
+
+    <main>
+        <div class="info-section">
+            <h2 ><img src="images\jumping.png" alt="kid" width="60px">Kid Registry</h2>
+            <div class="form-container">
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter full name">
+                </div>
+                <div>
+                    <label>Date of Birth</label>
+                    <input type="date">
+                </div>
+                <div class="profile-upload">
+                    <img src="images/user.png" alt="Profile Picture">
+                    <button>Upload</button>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <select>
+                        <option value="">Select a gender</option>
+                        <option value="female">Female</option>
+                        <option value="malw">male</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Weight</label>
+                    <input type="text" placeholder="kg">
+                </div>
+                <div>
+                    <label>Height</label>
+                    <input type="text" placeholder="cm">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="example@gmail.com">
+                </div>
+                <div>
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="05xxxxxxxx">
+                </div>
+                <div class="button-container">
+                    <button class="cancel-btn"><a href="ParentDashBoard.html" >cancel</a></button>
+                    <button class="register-btn"><a href="ParentDashBoard.html" >Register</a></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Copyright © 2025 SkillNest. All rights reserved.</p>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="contactUs.html">Contact Us</a>
+      </footer>
+     
+ </body>
+</html>

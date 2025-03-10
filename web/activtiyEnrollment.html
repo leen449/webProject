@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillNest - Activity Enrollment</title>
+    <style>
+       
+   h2 img{
+    width: 30px; 
+    height: 30px;
+    border-radius: 5px; 
+   }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        #sidebar {
+            width: 250px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+            margin-right: 40px;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            gap: 20px;
+        }
+        .activity {
+            width: 200px;
+            border: 1px outset #ccc;
+            padding: 10px;
+            text-align: center;
+            background: white;
+        }
+        .activity input {
+            margin-top: 10px;
+        }
+        .activity img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px; 
+}
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/SkillNest.png" alt="SkillNest" width="50">
+        <h1>SkillNest</h1>
+        <div id='navigation'>
+            <a href="home.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="activities.html">Activities</a>
+            <a href="ParentDashBoard.html">Parent Dashboard</a>
+            <a href="admin.html">Admin Dashboard</a>
+            <a href="coaches.html">Coaches</a>
+            <a href="evaluateActivity.html">Activity Evaluation</a>
+
+        </div>
+    </header>
+    
+    <h2><img src="images\puzzle-piece.png" alt="puzzle">Activity Enrollment</h2>
+    <div class="container">
+        <div id="sidebar">
+            <h3>Filters</h3>
+            <label for="select-child">Select Child</label>
+            <br>
+            <select id="select-child">
+                <option>All kids</option>
+                <option>Kid1</option>
+            </select>
+            <br>
+            <label for="select-coach">Select Coach</label>
+            <br>
+            <select id="select-coach">
+                <option>All Coaches</option>
+                <option>Coach1</option>
+            </select>
+            <h4>Prerequisites</h4>
+            <input type="radio" id="beginner" name="prerequisites" checked>
+            <label for="beginner">Beginner</label><br>
+            <input type="radio" id="intermediate" name="prerequisites">
+            <label for="intermediate">Intermediate</label><br>
+            <input type="radio" id="advanced" name="prerequisites">
+            <label for="advanced">Advanced</label>
+        </div>
+        
+        <div class="content">
+            <div class="activity">
+                <img src="images\kids-calligraphy.jpg" alt="Calligraphy">
+                <h3>Calligraphy</h3>
+                <p>Coach: Coach1</p>
+                <p>Prerequisites: Beginner</p>
+                <input type="checkbox" checked>
+            </div>
+            <div class="activity">
+                <img src="images\kids-planting.jpg" alt="planting">
+                <h3>Planting</h3>
+                <p>Coach: Coach1</p>
+                <p>Prerequisites: Beginner</p>
+                <input type="checkbox">
+            </div>
+            <div class="activity">
+                <img src="images\kids-crochet.png" alt="crochet">   
+                <h3>Crochet</h3>
+                <p>Coach: Coach1</p>
+                <p>Prerequisites: Beginner</p>
+                <input type="checkbox">
+            </div>
+        </div>
+    </div>
+    
+    <button><a href="ParentDashBoard.html">Enroll your kid</a></button>
+    
+    <footer>
+        <p>Copyright © 2025 SkillNest. All rights reserved.</p>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="contactUs.html">Contact Us</a>
+    </footer>
+</body>
+</html>

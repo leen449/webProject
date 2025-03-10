@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillNest</title>
+  <style>
+   
+   .container {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+   .bar {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+    }
+    .bar img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 5px; 
+  
+}
+    .kids {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      background-color: white;
+      margin: 20px;
+      padding: 20px;
+      border-style:inset;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .kid-container {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    .kid-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: white;
+      padding: 15px;
+      border-style:outset;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+    }
+    div.kid-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+    }
+   
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="images\SkillNest.png" alt="SkillNest">
+    <nav id="navigation">
+      <a href="home.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="activities.html">Activities</a>
+      <a href="ParentDashBoard.html">Parent Dashboard</a>
+      <a href="admin.html">Admin</a>
+      <a href="coaches.html">Coaches</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="bar">
+        <h2><a href="RegisterKid.html"><img src="images\add-user.png" alt="add"><br> Regster new kid</a></h2>
+        <p>Add a new kid to your family profile</p>
+      </div>
+      <div class="bar">
+        <h2><a href="activtiyEnrollment.html"><img src="images\evaluate.png" alt="enroll"><br>enroll in Activities</a></h2>
+        <p>Register your kids for various Activities</p>
+      </div>
+      <div class="bar">
+        <h2><a href="evaluateActivity.html"><img src="images\star.png" alt="star"><br>Evaluate Activities</a></h2>
+        <p>Rate and provide feedback on Activities</p>
+      </div>
+    </div>
+    <h2>Your Kids</h2>
+    <section class="kids">
+    
+      <div class="kid-container">
+        <div class="kid-profile">
+          <img src="images\skillnest_kid.png.png" alt="Sara Ahmed">
+          <div>
+            <h3>Sara Ahmed</h3>
+            <p>Age: 8</p>
+            <p>Activities: 2</p>
+            <a href="moreInfo.html">More Info</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Copyright © 2025 SkillNest. All rights reserved.</p>
+    <a href="home.html">Home</a>
+    <a href="aboutUs.html">About Us</a>
+    <a href="contactUs.html">Contact Us</a>
+  </footer>
+</body>
+</html>

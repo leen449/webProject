@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5e3; /* Light beige for a craftsy feel */
+    color: #5c4a3e; /* Earthy brown for text */
+}
+
+.navbar {
+    background-color: #8b7355; /* Muted brown for the navbar */
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #a88c6e; /* Lighter brown for hover */
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #5c4a3e; /* Earthy brown for headings */
+}
+
+/* Home Page Styles */
+.activity {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.view-details {
+    background-color: #8b7355; /* Muted brown for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-details:hover {
+    background-color: #a88c6e; /* Lighter brown for hover */
+}
+
+/* Schedule Page Styles */
+.coach-navigation button {
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.coach-navigation button:hover {
+    background-color: #a88c6e;
+}
+
+.schedule {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #8b7355;
+    color: white;
+}

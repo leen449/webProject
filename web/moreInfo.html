@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SkillNest</title>
+  <style>
+    main {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 50%;
+    }
+
+    .info-section h2 {
+        margin-top: 0;
+    }
+
+    .info-row {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .info-item {
+        flex: 1;
+    }
+
+    .info-section label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .info-section input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .info-section a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        float: right;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/SkillNest.png" alt="SkillNest">
+    <h1>SkillNest</h1>
+    <div id="navigation">
+      <a href="home.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="activities.html">Activities</a>
+      <a href="ParentDashBoard.html">Parent Dashboard</a>
+      <a href="admin.html">Admin</a>
+      <a href="coaches.html">Coaches</a>
+    </div>
+    <hr>
+  </header>
+
+  <main>
+    <img src="images\jumping.png" alt="kid" height="60px" width="60px" style="margin-right: 60px  ;">
+    <div class="info-section">
+      <h2>More Information</h2>
+      
+      <div class="info-row">
+        
+        <div class="info-item">
+          <label>Full Name</label>
+          <p>Sara Ahmed</p>
+          <img src="images/skillnest_kid.png.png" alt="sara" width="60px">
+        </div>
+        <div class="info-item">
+          <label>Date of Birth</label>
+          <input type="text" placeholder="2010/01/03">
+        </div>
+      </div>
+      
+      <div class="info-row">
+        <div class="info-item">
+          <label>Email</label>
+          <input type="email" placeholder="UmSarah@gmail.com">
+        </div>
+        <div class="info-item">
+          <label>Phone Number</label>
+          <input type="text" placeholder="0546529381">
+        </div>
+      </div>
+      
+      <div class="info-row">
+        <div class="info-item">
+          <label>Gender</label>
+          <input type="text" placeholder="Female">
+        </div>
+        <div class="info-item">
+          <label>Weight</label>
+          <input type="text" placeholder="35kg">
+        </div>
+        <div class="info-item">
+          <label>Height</label>
+          <input type="text" placeholder="151cm">
+        </div>
+      </div>
+
+      <a class="button" href="ParentDashBoard.html">Back &gt;</a>
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Copyright &copy; 2025 SkillNest. All rights reserved.</p>
+    <a href="home.html">Home</a>
+    <a href="aboutUs.html">About Us</a>
+    <a href="contactUs.html">Contact Us</a>
+  </footer>
+</body>
+</html>

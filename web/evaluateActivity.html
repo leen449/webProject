@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Evaluation - SkillNest</title>
+    <style>
+    
+        h2 {
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .container {
+    max-width: 600px;
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+        .stars {
+            display: flex;
+            justify-content: left;
+            margin: 15px 0;
+        }
+        .star {
+            font-size: 25px;
+            cursor: pointer;
+            color: #ccc;
+        }
+       
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+     
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="SkillNest">
+        <h1>SkillNest</h1>
+        <div id='navigation'>
+            <a href="home.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="activities.html">Activities</a>
+            <a href="ParentDashBoard.html">Parent Dashboard</a>
+            <a href="admin.html">Admin</a>
+            <a href="coaches.html">Coaches</a>
+        </div>
+        <hr>
+    </header>
+    <h2><img src="images\edit.png" alt="evaluate" width="40px">Activity Evaluation</h2>
+    <div class="container">
+        <label for="activity">Select an activity</label>
+        <select id="activity">
+            <option>Select an activity</option>
+            <option>Activity 1</option>
+            <option>Activity 2</option>
+            <option>Activity 3</option>
+        </select>
+        
+        <label>Rating</label>
+        <div class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" rows="4" placeholder="Write your thoughts on the activity"></textarea>
+        
+        <div class="button-container">
+            <a href="ParentDashBoard.html">Submit</a>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <p>Copyright © 2025 SkillNest. All rights reserved.</p>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="contactUs.html">Contact Us</a>
+      </footer>
+</body>
+</html>

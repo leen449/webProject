@@ -1,0 +1,199 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5e3; /* Light beige for a craftsy feel */
+    color: #5c4a3e; /* Earthy brown for text */
+}
+
+.card h2 {
+    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+
+}
+
+ul li {
+    color: #333;
+    margin: 5px ;
+    text-align: left;
+}
+
+.container{
+    color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.card{
+margin-top: 32px;;
+background: white;
+padding: 19px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+width: 300px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.card:hover{
+transition: 0.5s ease;
+transform: scale(1.1);
+
+}
+
+
+.card img{
+
+display: block;
+width: 130px;
+margin: 0 auto 10px auto;
+margin-left: 80px;
+}
+
+a{
+    color: #333;
+    font-weight:bold;   
+}
+
+.card2:hover{
+    background-color:#ccc;
+    transition: 0.1s ease;
+    transform: scale(1.1); 
+}
+
+.card2{
+margin-left: 23px;    
+display: inline-block;    
+padding: 5px;
+background-color: #949090;
+border-radius: 25px;
+
+
+}
+
+
+.container2 {
+    max-width: 750px;
+    margin: 30px auto;
+    background: rgb(241, 237, 237);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(168, 142, 142, 0.822);
+}
+
+.table-list {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.table-row {
+    display: flex;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+
+
+}
+
+.table-row.header {
+    margin-left: 10px;
+    font-weight: bold;
+    background-color: #ccc7c7;
+    margin-bottom: 25px;
+}
+
+.table-row span {
+    flex: 1;
+    padding: 15px;
+    text-align: left;
+}
+
+.table-row:hover {
+    background-color: #d6d0d0;
+}
+
+.aclist li{
+margin: 12px;
+list-style-type: none;
+padding: 0;
+text-align: center;
+}
+
+
+label {
+    position: absolute;
+    top: 117px;
+    left: 310px;
+    font-size: 18px;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+input[type="search"]:focus + label {
+    top: 90px; /* Move up just a little bit */
+    left: 310px; /* Keep the same left position */
+    font-size: 16px; /* Slightly smaller font size */
+    color: #1882f3; /* Change color if desired */
+}
+
+
+
+.containerr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between activities */
+}
+
+.activity-image {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    margin-right: 20px;
+}
+
+.activity-text {
+    flex-grow: 1;
+}
+
+.kids-list {
+    display: none;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.activity-text:hover .kids-list {
+    display: block;
+}
+
+/*
+.tooltip{
+
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    border:1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 2px 2px 10px rgb(0 , 0, 0);
+    transition: opacity 0.3 ease-in-out;
+}
+.hover-word{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+
+}
+.hover-word:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+}*/

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafts for Kids - Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="register.html">Register a New Kid</a></li>
+            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
+            <li><a href="evaluateActivity.html">Activity Evaluation</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Schedule</h1>
+        <div class="coach-navigation">
+            <button onclick="showSchedule('sarah')">Sarah Johnson</button>
+            <button onclick="showSchedule('michael')">Michael Lee</button>
+            <!-- Add more coaches as needed -->
+        </div>
+
+        <div id="sarah-schedule" class="schedule">
+            <h2>Sarah Johnson's Schedule</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>10:00 AM</td>
+                    <td>Pottery Workshop</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>2:00 PM</td>
+                    <td>Pottery Workshop</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="michael-schedule" class="schedule" style="display: none;">
+            <h2>Michael Lee's Schedule</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>11:00 AM</td>
+                    <td>Calligraphy Class</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>3:00 PM</td>
+                    <td>Calligraphy Class</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+</body>
+</html>
