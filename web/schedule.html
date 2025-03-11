@@ -1,77 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafts for Kids - Schedule</title>
+    <title>SkillNest - Schedule</title>
     <link rel="stylesheet" href="styles.css">
+	
+	
 </head>
+
+<style>
+
+.coach-navigation ul{
+    display: flex;
+    flex-wrap: row;
+	border-radius: 10px;
+	padding: 5px;
+    justify-content: space-around;
+	background-color: #8b7355; 
+    overflow: hidden;
+}
+
+.coach-navigation ul li {
+    list-style-type: none;
+	display: inline;
+
+}
+
+.coach-navigation ul li a{
+    color: white;
+    text-decoration: none;
+
+}
+.coach-navigation ul li a:hover{
+    color: #a88c6e;
+
+}
+
+table, th, td{
+    text-align: center;
+
+}
+
+
+
+
+
+</style>
+
+
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="activities.html">Activities</a></li>
             <li><a href="coaches.html">Coaches</a></li>
             <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+            <li><a href="parent.html">Parent Dashboard</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="register.html">Register a New Kid</a></li>
-            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluateActivity.html">Activity Evaluation</a></li>
+            <li><a href="enrollment.html">Activity Enrollment</a></li>
+            <li><a href="evaluation.html">Activity Evaluation</a></li>
         </ul>
     </nav>
+	
+	
+	
 
     <div class="container">
+	
         <h1>Schedule</h1>
         <div class="coach-navigation">
-            <button onclick="showSchedule('sarah')">Sarah Johnson</button>
-            <button onclick="showSchedule('michael')">Michael Lee</button>
-            <!-- Add more coaches as needed -->
+		<ul>
+          <li><a href="#sarah-schedule">Sarah's Schedule</a></li>
+            <li><a href="#michael-schedule">Micheal's Schedule</a></li>
+            <li><a href="#">Nourah's Schedule</a></li>
+            <li><a href="#">Khaleed's Schedule</a></li>
+            <li><a href="#">Najla's Schedule</a></li>  
+		</ul>	
         </div>
 
         <div id="sarah-schedule" class="schedule">
-            <h2>Sarah Johnson's Schedule</h2>
+           
             <table>
+			
+			
                 <tr>
-                    <th>Day</th>
+                    <th>name</th>
                     <th>Time</th>
-                    <th>Activity</th>
+                    <th>Sunday</th>
+					<th>Mondya</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
                 </tr>
                 <tr>
-                    <td>Monday</td>
-                    <td>10:00 AM</td>
-                    <td>Pottery Workshop</td>
+                    <td rowspan=6 >Sarah</td>
+                    <td>1:00 PM - 2:00PM</td>
+                    <td>Calligraphy Workshop</td>
+					<td style="background-color:F7F2EE;"> </td>
+					<td>Pottery Workshop</td>
+					<td>Calligraphy Workshop</td>
+					<td style="background-color:F7F2EE;"> </td>
                 </tr>
                 <tr>
-                    <td>Wednesday</td>
-                    <td>2:00 PM</td>
-                    <td>Pottery Workshop</td>
+                    <td>2:00 PM - 3:00 PM</td>
+                    <td></td>
+					<td style="background-color:F7F2EE;"> </td>
+					<td rowspan=2>Glass art Workshop</td>
+					<td></td>
+					<td style="background-color:F7F2EE;"> </td>
                 </tr>
+				<tr>
+                    <td>3:00 PM - 4:00 PM</td>
+                    <td>Pottery Workshop</td>
+					<td style="background-color:F7F2EE;"> </td>
+					<td> </td>
+					<td style="background-color:F7F2EE;"> </td>
+					
+                </tr>
+				<tr>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td> </td>
+					<td style="background-color:F7F2EE;"> </td>
+					<td> </td>
+					<td>Glass art Workshop</td>
+					<td style="background-color:F7F2EE;"> </td>
+                </tr>
+				<tr style="background-color:F7F2EE;">
+                    <td>5:00 PM - 6:00 PM</td>
+                    <td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+                </tr>
+				
+				
             </table>
         </div>
+		
+		<br>
 
-        <div id="michael-schedule" class="schedule" style="display: none;">
-            <h2>Michael Lee's Schedule</h2>
+        <div id="michael-schedule" class="schedule">
             <table>
+			
                 <tr>
-                    <th>Day</th>
+                    <th>name</th>
                     <th>Time</th>
-                    <th>Activity</th>
+                    <th>Sunday</th>
+					<th>Mondya</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
                 </tr>
                 <tr>
-                    <td>Tuesday</td>
-                    <td>11:00 AM</td>
-                    <td>Calligraphy Class</td>
+                    <td rowspan=6 >Micheal</td>
+                    <td style="background-color:F7F2EE;">1:00 PM - 2:00PM</td>
+                    <td style="background-color:F7F2EE;"></td>
+					<td style="background-color:F7F2EE;"> </td>
+					<td style="background-color:F7F2EE;"></td>
+					<td style="background-color:F7F2EE;"></td>
+					<td style="background-color:F7F2EE;"> </td>
                 </tr>
                 <tr>
-                    <td>Thursday</td>
-                    <td>3:00 PM</td>
-                    <td>Calligraphy Class</td>
+                    <td>2:00 PM - 3:00 PM</td>
+                    <td></td>
+					<td>Pottery Workshop</td>
+					<td>Sewing Workshop</td>
+					<td></td>
+					<td style="background-color:F7F2EE;"> </td>
                 </tr>
+				<tr>
+                    <td>3:00 PM - 4:00 PM</td>
+                    <td> </td>
+					<td>Wood Woring Workshop</td>
+					<td> </td>
+					<td> </td>
+					<td style="background-color:F7F2EE;"> </td>
+					
+                </tr>
+				<tr>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td rowspan=2>Planting Workshop</td>
+					<td> </td>
+					<td> </td>
+					<td rowspan=2>Sewing Workshop</td>
+					<td style="background-color:F7F2EE;"></td>
+                </tr>
+				<tr>
+                    <td>5:00 PM - 6:00 PM</td>
+                    <td> </td>
+					<td> </td>
+					<td style="background-color:F7F2EE;"> </td>
+                </tr>
+				
             </table>
+			
+			
+			
         </div>
     </div>
 
     
 </body>
+
 </html>
