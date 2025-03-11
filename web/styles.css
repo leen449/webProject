@@ -3,12 +3,14 @@ body {
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f5e3; /* Light beige for a craftsy feel */
-    color: #5c4a3e; /* Earthy brown for text */
+    background-color: #f9f5e3;
+    color: #5c4a3e;
 }
 
 .navbar {
-    background-color: #8b7355; /* Muted brown for the navbar */
+    border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+    background-color: #8b7355;
     overflow: hidden;
 }
 
@@ -21,6 +23,7 @@ body {
 }
 
 .navbar ul li a {
+    border-radius: 10px;
     display: block;
     color: white;
     text-align: center;
@@ -29,7 +32,7 @@ body {
 }
 
 .navbar ul li a:hover {
-    background-color: #a88c6e; /* Lighter brown for hover */
+    background-color: #a88c6e;
 }
 
 .container {
@@ -37,10 +40,10 @@ body {
 }
 
 h1 {
-    color: #5c4a3e; /* Earthy brown for headings */
+    color: #5c4a3e;
 }
 
-/* Home Page Styles */
+
 .activity {
     background-color: white;
     padding: 15px;
@@ -62,20 +65,6 @@ h1 {
     background-color: #a88c6e; /* Lighter brown for hover */
 }
 
-/* Schedule Page Styles */
-.coach-navigation button {
-    background-color: #8b7355;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.coach-navigation button:hover {
-    background-color: #a88c6e;
-}
 
 .schedule {
     margin-top: 20px;
