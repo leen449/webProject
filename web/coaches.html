@@ -3,38 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafts for Kids - Coaches</title>
+    <title>SkillNest - Coaches</title>
     <link rel="stylesheet" href="styles.css">
+	
+	<style>
+	
+.container div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	align-items: flex-start;
+    
+}
+
+.coach-item{
+    background-color: white;
+    max-width: 250px;
+	max-height: 1000px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+.coach-item a{
+   color: #5c4a3e;
+   text-decoration: none;
+ }
+ .coach-item a:hover{
+   color: #a88c6e;
+ }
+
+.choach-img{
+    max-width: 100px;
+    max-height: 100px;
+
+}
+
+
+
+	
+	
+	</style>
+	
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="activities.html">Activities</a></li>
             <li><a href="coaches.html">Coaches</a></li>
             <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+            <li><a href="parent.html">Parent Dashboard</a></li>
             <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="RegisterKid.html">Register a New Kid</a></li>
-            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluateActivity.html">Activity Evaluation</a></li>
+            <li><a href="register.html">Register a New Kid</a></li>
+            <li><a href="enrollment.html">Activity Enrollment</a></li>
+            <li><a href="evaluation.html">Activity Evaluation</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Our Coaches</h1>
         <div class="coach-list">
+		
+		
             <div class="coach-item">
-                <img src="coach1.jpg" alt="Coach 1">
-                <h2>Sarah Johnson</h2>
-                <p>Expertise: Pottery</p>
+                <img class="choach-img" src="images\sarah.jpg" alt="Coach sarah">
+                <h2>Sarah</h2> <br>
+                <p>Expertise:<br>With over a decade of experience in the arts, Sarah is passionate about blending traditional techniques with modern creativity.
+				She specializes in calligraphy,pottery, and glass art, helping students develop their artistic expression through precision and patience.
+				Whether you're shaping clay, crafting elegant glass pieces, or perfecting your handwriting, Sarah’s guidance ensures a fulfilling experience.</p>
+				<br>
+				<a href="schedule.html">View Schedule</a>
             </div>
+			
+			
             <div class="coach-item">
-                <img src="coach2.jpg" alt="Coach 2">
-                <h2>Michael Lee</h2>
-                <p>Expertise: Calligraphy</p>
+                <img class="choach-img" src="images\micheal.jpg" alt="Coach micheal">
+                <h2>Michael</h2> <br>
+				<p>Expertise: Michael is a hands-on craftsman with a deep appreciation for nature and handmade goods. 
+				He brings his expertise in planting, woodworking, sewing, and pottery to each session, teaching students how to create functional 
+				and beautiful items. His approach focuses on sustainability and skill-building, making every class both educational and enjoyable.</p>
+				<br>
+               <a href="schedule.html">View Schedule</a>
             </div>
-            <!-- Add more coaches as needed -->
+            
+			
+			<div class="coach-item">
+                <img class="choach-img" src="images\nourah.jpg" alt="Coach nourah">
+                <h2>Nourah</h2> <br>
+                <p>Expertise: Nourah is an artist known for her intricate glasswork, elegant pottery, and expressive calligraphy. 
+				With a background in traditional and contemporary art styles, she encourages students to explore their creativity
+				while mastering technical skills. Her workshops provide a welcoming environment for both beginners and experienced artists.</p> 
+				<br>
+				<a href="schedule.html">View Schedule</a>
+            </div>
+			
+			<div class="coach-item">
+                <img class="choach-img" src="images\khaleed.jpg" alt="Coach khaleed">
+                <h2>Khaleed</h2> <br>
+                <p>Expertise: Khaled’s passion for craftsmanship spans multiple disciplines, from delicate glasswork to sturdy woodworking. 
+				With expertise in glass art, sewing, planting, and woodworking, he helps students bring their creative ideas to life.
+				His sessions focus on both technique and innovation, ensuring that each participant gains valuable skills they can use in their own projects.</p>
+				<br>
+				<a href="schedule.html">View Schedule</a>
+            </div>
+			
+			<div class="coach-item">
+                <img class="choach-img" src="images\najla.jpg" alt="Coach najla">
+                <h2>Najla</h2> <br>
+                <p>Expertise: Najla believes that both calligraphy and sewing require patience, precision, and creativity.
+				With years of experience, she teaches students how to craft beautiful hand-lettering and intricate fabric designs.
+				Her classes emphasize both tradition and innovation, allowing students to find their own artistic voice in each stitch and stroke.</p>
+				<br>
+				<a href="schedule.html">View Schedule</a>
+            </div>
+			
+			
         </div>
     </div>
 </body>
