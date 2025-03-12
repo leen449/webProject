@@ -8,37 +8,47 @@
 	
 	<style>
 	
-.container div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    gap: 10px;
-}
+	main{
+	margin: 50px;
+	}
+	
+    .coach-list {
+        display: flex;
+        gap: 50px;
+		justify-content: space-around;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+		flex-wrap: nowrap;
+		scroll-behavior: smooth;
+        
+    }
 
-.coach-item{
-    background-color: white;
-    max-width: 250px;
-	max-height: 1000px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-   
-}
+    .coach-item {
+        background-color: white;
+        max-width: 300px;
+		height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        scroll-snap-align: start;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+	
+	 .coach-item a{
+	    text-decoration: none;
+        color: #3e3e3e;
+		font-weight: bold;
+    }
+	
+    .coach-item a:hover{
+       color: #a88c6e;
+    }
 
-.coach-item a{
-   color: #5c4a3e;
-   text-decoration: none;
- }
- .coach-item a:hover{
-   color: #a88c6e;
- }
+    .choach-img{
+       border-radius: 10px;
+       max-width: 100px;
+       max-height: 100px;
 
-.choach-img{
-    max-width: 100px;
-    max-height: 100px;
-
-}
+    }
 
 
 
@@ -48,29 +58,33 @@
 	
 </head>
 <body>
+    <header>
     <nav class="navbar">
+        <div class="logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+            <span>SkillNest</span>
+        </div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
             <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="parent.html">Parent Dashboard</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="register.html">Register a New Kid</a></li>
-            <li><a href="enrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluation.html">Activity Evaluation</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="home.html">Home</a></li>
+            
         </ul>
     </nav>
+    </header>
 
-    <div class="container">
+    <main>
         <h1>Our Coaches</h1>
+		
         <div class="coach-list">
 		
 		
             <div class="coach-item">
                 <img class="choach-img" src="images\sarah.jpg" alt="Coach sarah">
-                <h2>Sarah</h2> <br>
-                <p>Expertise: With over a decade of experience in the arts, Sarah is passionate about blending traditional techniques with modern creativity.
+                <h2>Sarah</h2> 
+                <p>With over a decade of experience in the arts, Sarah is passionate about blending traditional techniques with modern creativity.
 				She specializes in calligraphy,pottery, and glass art, helping students develop their artistic expression through precision and patience.
 				Whether you're shaping clay, crafting elegant glass pieces, or perfecting your handwriting, Sarah’s guidance ensures a fulfilling experience.</p>
 				<br>
@@ -80,8 +94,8 @@
 			
             <div class="coach-item">
                 <img class="choach-img" src="images\micheal.jpg" alt="Coach micheal">
-                <h2>Michael</h2> <br>
-				<p>Expertise: Michael is a hands-on craftsman with a deep appreciation for nature and handmade goods. 
+                <h2>Michael</h2>
+				<p>Michael is a hands-on craftsman with a deep appreciation for nature and handmade goods. 
 				He brings his expertise in planting, woodworking, sewing, and pottery to each session, teaching students how to create functional 
 				and beautiful items. His approach focuses on sustainability and skill-building, making every class both educational and enjoyable.</p>
 				<br>
@@ -91,8 +105,8 @@
 			
 			<div class="coach-item">
                 <img class="choach-img" src="images\nourah.jpg" alt="Coach nourah">
-                <h2>Nourah</h2> <br>
-                <p>Expertise: Nourah is an artist known for her intricate glasswork, elegant pottery, and expressive calligraphy. 
+                <h2>Nourah</h2>
+                <p>Nourah is an artist known for her intricate glasswork, elegant pottery, and expressive calligraphy. 
 				With a background in traditional and contemporary art styles, she encourages students to explore their creativity
 				while mastering technical skills. Her workshops provide a welcoming environment for both beginners and experienced artists.</p> 
 				<br>
@@ -101,8 +115,8 @@
 			
 			<div class="coach-item">
                 <img class="choach-img" src="images\khaleed.jpg" alt="Coach khaleed">
-                <h2>Khaleed</h2> <br>
-                <p>Expertise: Khaled’s passion for craftsmanship spans multiple disciplines, from delicate glasswork to sturdy woodworking. 
+                <h2>Khaleed</h2>
+                <p>Khaled’s passion for craftsmanship spans multiple disciplines, from delicate glasswork to sturdy woodworking. 
 				With expertise in glass art, sewing, planting, and woodworking, he helps students bring their creative ideas to life.
 				His sessions focus on both technique and innovation, ensuring that each participant gains valuable skills they can use in their own projects.</p>
 				<br>
@@ -111,16 +125,48 @@
 			
 			<div class="coach-item">
                 <img class="choach-img" src="images\najla.jpg" alt="Coach najla">
-                <h2>Najla</h2> <br>
-                <p>Expertise: Najla believes that both calligraphy and sewing require patience, precision, and creativity.
+                <h2>Najla</h2>
+                <p>Najla believes that both calligraphy and sewing require patience, precision, and creativity.
 				With years of experience, she teaches students how to craft beautiful hand-lettering and intricate fabric designs.
 				Her classes emphasize both tradition and innovation, allowing students to find their own artistic voice in each stitch and stroke.</p>
 				<br>
 				<a href="schedule.html">View Schedule</a>
             </div>
 			
+			<div class="coach-item">
+                <img class="choach-img" src="images\omar.jpg" alt="Coach omar">
+                <h2>Omar</h2>
+                <p>Omar is a multi-talented artisan who finds joy in both fine arts and practical crafts.
+				With expertise in pottery, calligraphy, planting, and sewing, he teaches students how to merge creativity with functionality. 
+				Whether shaping clay, designing elegant scripts, growing lush gardens, or crafting textiles, 
+				Omar’s hands-on approach ensures that every student gains confidence and skill in their craft.</p>
+				<br>
+				<a href="schedule.html">View Schedule</a>
+            </div>
+			
 			
         </div>
+    </main>
+	
+	<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+            <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+            <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+            <div class="social-media">
+                <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+                <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+                <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+            </div>
+        </div>
     </div>
+    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
