@@ -1,5 +1,7 @@
 /* Header Styles */
 header {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
     background-color: #6f4e37; 
     padding: 20px 30px; 
 }
@@ -331,6 +333,7 @@ th {
 }
 /* Footer Section */
 footer {
+	border-radius: 10px;
     background-color: #6f4e37;
     color: #fdfdfe;
     padding: 20px;
