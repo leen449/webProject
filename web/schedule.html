@@ -13,28 +13,30 @@
 
 <style>
 
-.coach-navigation ul{
+#coach-navigation ul{
     display: flex;
     flex-wrap: row;
 	border-radius: 10px;
 	padding: 5px;
     justify-content: space-around;
-	background-color: #8b7355; 
+	background-color: #6f4e37; 
     overflow: hidden;
 }
 
-.coach-navigation ul li {
+#coach-navigation ul li {
     list-style-type: none;
 	display: inline;
 
 }
 
-.coach-navigation ul li a{
+#coach-navigation ul li a{
     color: white;
     text-decoration: none;
 
 }
-.coach-navigation ul li a:hover{
+
+
+#coach-navigation ul li a:hover{
     color: #a88c6e;
 
 }
@@ -44,6 +46,15 @@ table, th, td{
 
 }
 
+a{
+padding: 5px;
+color: #5c4a3e;
+text-decoration: none;
+}
+
+a:hover{
+ color: #a88c6e;
+}
 
 
 
@@ -52,27 +63,29 @@ table, th, td{
 
 
 <body>
+    <header id="top">
     <nav class="navbar">
+        <div class="logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+            <span>SkillNest</span>
+        </div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
             <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="parent.html">Parent Dashboard</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="register.html">Register a New Kid</a></li>
-            <li><a href="enrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluation.html">Activity Evaluation</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="home.html">Home</a></li>
+            
         </ul>
     </nav>
+    </header>
 	
 	
-	
-
     <div class="container">
 	
         <h1>Schedule</h1>
-        <div class="coach-navigation">
+
+        <div id="coach-navigation">
 		<ul>
           <li><a href="#sarah-schedule">Sarah's Schedule</a></li>
             <li><a href="#michael-schedule">Micheal's Schedule</a></li>
@@ -82,7 +95,7 @@ table, th, td{
 		</ul>	
         </div>
 
-        <div id="sarah-schedule" class="schedule">
+        <div class="schedule">
            
             <table>
 			
@@ -138,13 +151,14 @@ table, th, td{
 					<td> </td>
                 </tr>
 				
-				
             </table>
+			<a href="#top">Back to top</a>
+			<br>
+			
         </div>
 		
-		<br>
 
-        <div id="michael-schedule" class="schedule">
+        <div class="schedule">
             <table>
 			
                 <tr>
@@ -198,11 +212,32 @@ table, th, td{
                 </tr>
 				
             </table>
-			
-			
-			
+			<a href="#top">Back to top</a>
+			<br>
+		</div>
+		
+		
+    </div>
+	
+	<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+            <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+            <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+            <div class="social-media">
+                <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+                <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+                <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+            </div>
         </div>
     </div>
+    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+    </footer>
 
     
 </body>
