@@ -204,7 +204,7 @@ th {
     padding: 0 0px;
 }
 
-not(#activities-page) .activity-card {
+.activity-card {
     background-color: white; 
     padding: 15px;
     border-radius: 10px;
@@ -234,7 +234,7 @@ not(#activities-page) .activity-card {
     margin-bottom: 10px;
 }
 
-not(#activities-page) .activity-card p {
+ .activity-card p {
     font-size: 0.9em;
     color: #3e3e3e;
     line-height: 1.4;
