@@ -1,9 +1,9 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;  
     margin: 0;
     padding: 0;
-    background-color: #f9f5e3; /* Light beige for a craftsy feel */
-    color: #5c4a3e; /* Earthy brown for text */
+    background-color: #F5F5F5; 
+    color: #3e3e3e;  
 }
 
 .card h2 {
@@ -48,7 +48,7 @@ align-items: flex-start;
 
 .card:hover{
 transition: 0.5s ease;
-transform: scale(1.1);
+transform: scale(1.05);
 
 }
 
