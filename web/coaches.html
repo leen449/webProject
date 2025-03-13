@@ -14,22 +14,19 @@
 	
     .coach-list {
         display: flex;
-        gap: 50px;
+		overflow: auto;
 		justify-content: space-around;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
-		flex-wrap: nowrap;
-		scroll-behavior: smooth;
-        
+        gap: 50px;
+        padding: 20px;
     }
-
+ 
     .coach-item {
+	    flex: 0 0 auto;
         background-color: white;
-        max-width: 300px;
+        max-width: 600px;
 		height: auto;
         padding: 20px;
         border-radius: 10px;
-        scroll-snap-align: start;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 	
@@ -50,9 +47,6 @@
 
     }
 
-
-
-	
 	
 	</style>
 	
