@@ -47,8 +47,31 @@ header {
 .navbar ul li a:hover {
     background-color: #8b5a43; 
 }
+/*breadcrumbs*/
 
-
+nav[aria-label="Breadcrumb"] ol {
+    list-style: none;
+    padding: 0;
+    margin: 15px;
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+nav[aria-label="Breadcrumb"] ol li {
+    display: inline;
+}
+nav[aria-label="Breadcrumb"] ol li:not(:last-child)::after {
+    content: ">";
+    margin-left: 8px;
+}
+nav[aria-label="Breadcrumb"] ol li a {
+    text-decoration: none;
+    color: #007BFF;
+}
+nav[aria-label="Breadcrumb"] ol li a:hover {
+    text-decoration: underline;
+}
+/*breadcrumbs*/
 
 body {
     font-family: "Times New Roman", Times, serif;  
