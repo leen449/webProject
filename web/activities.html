@@ -5,41 +5,394 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crafts for Kids - Activities</title>
     <link rel="stylesheet" href="styles.css">
+	
+	    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+            
+            text-align: center;
+            
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+   .activities-container {
+    display: flex ;
+    flex-wrap: wrap  ;
+    justify-content: center ;
+    gap: 20px ;
+    max-width: 700px ; 
+    margin: auto ;
+}
+
+  .activity-box {
+    position: relative  ; 
+    width: 320px ;
+    height: 350px ;
+    overflow: hidden  ;
+    border-radius: 10px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)  ;
+    cursor: pointer  ;
+    transition: transform 0.3s ease-in-out ;
+    background-color: #000 ; 
+}
+
+
+
+       .activity-box:hover {
+            transform: scale(1.05) ;
+        }
+
+      .activity-box img {
+            width: 100% ;
+            height: 100% ;
+            object-fit: cover ;
+        }
+		
+		
+ .activity-name {
+    position: absolute ;
+    bottom: 10px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    font-size: 18px ;
+    font-weight: bold ;
+    color: white ;
+    background: rgba(0, 0, 0, 0.6) ; 
+    padding: 5px 10px ;
+    border-radius: 5px ;
+    text-align: center ;
+    width: fit-content ;
+    z-index: 2 ; 
+	opacity: 1 ;
+}
+
+.activity-info {
+    position: absolute ;
+    bottom: 0 ;
+    left: 0 ;
+    width: 100% ;
+    background: rgba(0, 0, 0, 0.8) ;
+    color: white ;
+    padding: 10px ;
+    text-align:left ;
+    opacity: 0 ;
+    transition: opacity 0.3s ease-in-out ;
+    font-size: 14px ;
+    z-index: 1 ; 
+	}
+
+
+
+  .activity-box:hover .activity-info {
+    opacity: 1 !important;
+	    transition: opacity 0.3s ease-in-out ;
+
+}
+
+
+
+
+ .activity-box:hover .activity-name {
+    display: none ; 
+}
+
+.activity-schedule ul {
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-schedule li {
+    background-color: #444;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.activity-info ul {
+    list-style-type: disc; 
+    color: white; 
+    padding-left: 20px; 
+}
+
+
+
+.activity-info li {
+    margin-bottom: 3px;
+    line-height: 1.3; 
+}
+
+
+
+
+    </style>
+
+	
 </head>
-<body>
+<body> 
+    <header>
     <nav class="navbar">
+        <div class="logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+            <span>SkillNest</span>
+        </div>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
-            <li><a href="admin.html">Admin Dashboard</a></li>
             <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="RegisterKid.html">Register a New Kid</a></li>
-            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluateActivity.html">Activity Evaluation</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="home.html">Home</a></li>
+            
         </ul>
     </nav>
+</header>
 
-    <div class="container">
-        <h1>Our Activities</h1>
-        <div class="activity-list">
-            <div class="activity-item">
-                <h2>Pottery Workshop</h2>
-                <div class="activity-info">
-                    <p>Learn the art of pottery with our expert coaches.</p>
-                    <button class="view-details">View More Details</button>
-                </div>
+
+<h1>Our Activities</h1>
+
+    <div class="activities-container">
+
+        <div class="activity-box">
+            <img src="images/planting .JPG" alt="Planting">
+            <div class="activity-info">
+                <p><strong>Description:</strong> Discover the joy of growing and caring for plants.</p>
+                <p><strong>Coach:</strong> Sarah Johnson, an expert in home gardening </p>
+                <strong>Objectives:</strong>
+<ul>
+    <li>Learn how to plant and care for different types of plants.</li>
+    <li>Understand soil types and the best watering techniques.</li>
+    <li>Grow your own plants and track their progress.</li>
+</ul>
+  <strong>Prerequisites:</strong>
+<ul>
+<li>Must be comfortable handling soil.</li>
+<li>Suitable for ages 8-12.</li>
+<li>Minimum height required: 110 cm.</li>
+</ul>				
+						
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Monday:</strong> 5:00 PM</li>
+        <li> <strong>Wednesday:</strong> 4:00 PM</li>
+    </ul>
+</div>
+
             </div>
-            <div class="activity-item">
-                <h2>Calligraphy Class</h2>
-                <div class="activity-info">
-                    <p>Discover the beauty of calligraphy in this fun and creative class.</p>
-                    <button class="view-details">View More Details</button>
-                </div>
+			
+            <div class="activity-name">Planting</div>
+        </div>
+
+
+        <div class="activity-box">
+            <img src="images/glass art.JPG" alt="Glass Art">
+            <div class="activity-info">
+                <p><strong>Description:</strong> Create beautiful glass pieces with expert techniques.</p>
+            
+                <p><strong>Coach:</strong> Mark Evans, a glass art specialist.</p>
+                <strong>Objectives:</strong>
+			<ul>
+			<li>Master glass-cutting and shaping skills.</li>
+			<li>Learn how to design and assemble glass artwork.</li>
+			<li>Create your own unique glass decorations.</li>
+            </ul>			
+			    <strong>Prerequisites:</strong>
+			<ul>
+			<li>Safety gloves are required.</li>
+			<li>Suitable for ages 9-14.</li>
+			<li> Minimum height required: 115 cm.</li>
+            </ul>			
+
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Tuesday:</strong> 6:00 PM</li>
+        <li> <strong>Sunday:</strong> 4:00 PM</li>
+    </ul>
+</div>
             </div>
-            <!-- Add more activities as needed -->
+            <div class="activity-name">Glass Art</div>
+        </div>
+
+
+
+        <div class="activity-box">
+            <img src="images/calligraphy .JPG" alt="Calligraphy">
+            <div class="activity-info">
+                <p><strong>Description:</strong> Improve your handwriting and master artistic lettering.</p>
+                <p><strong>Coach:</strong>Lisa Brown, a professional calligraphy artist </p>
+                <strong>Objectives:</strong> 
+			<ul>
+			<li>Learn the fundamentals of calligraphy and different lettering styles.</li>
+			<li>Practice brush and pen techniques for elegant writing.</li>
+			<li>Create beautiful designs and personalized calligraphy projects.</li>
+            </ul>			
+
+			    <strong>Prerequisites:</strong>
+			<ul>
+			<li>Must hold a pen properly.</li>
+			<li>Suitable for ages 7-13.</li>
+			<li>Minimum height required: 100 cm.</li>
+            </ul>			
+
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Wednesday:</strong> 3:00 PM</li>
+        <li> <strong>Tuesday:</strong> 4:00 PM</li>
+    </ul>
+</div>
+
+            </div>
+            <div class="activity-name">Calligraphy</div>
+        </div>
+
+
+
+        <div class="activity-box">
+            <img src="images/sewing .JPG" alt="Sewing">
+            <div class="activity-info">
+                <p><strong>Description:</strong>Learn the basics of sewing and fashion design .</p>
+                <p><strong>Coach:</strong>Emma Wilson, a skilled fashion designer </p>
+                <strong>Objectives:</strong>
+			<ul>
+			<li>Learn how to sew fabric pieces together.</li>
+			<li>Understand basic stitching techniques and pattern making.</li>
+			<li>Create simple sewing projects such as tote bags and accessories.</li>
+            </ul>			
+
+			  <strong>Prerequisites:</strong>
+			<ul>
+			<li>Must use safety scissors properly.</li>
+			<li>Suitable for ages 9-12.</li>
+			<li> Minimum height required: 120 cm. </li>
+            </ul>			
+
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Thursday:</strong> 5:00 PM</li>
+        <li> <strong>Saturday:</strong> 3:00 PM</li>
+    </ul>
+</div>
+
+            </div>
+            <div class="activity-name">Sewing</div>
+        </div>
+
+
+
+
+
+        <div class="activity-box">
+            <img src="images/wood working .JPG" alt="Wood Working">
+            <div class="activity-info">
+                <p><strong>Description:</strong> Build and craft wooden projects with expert guidance.</p>
+                <p><strong>Coach:</strong> Michael Adams, a professional carpenter </p>
+                <strong>Objectives:</strong>
+			<ul>
+			<li>Learn how to use woodworking tools safely.</li>
+			<li>Develop skills in cutting, shaping, and assembling wooden pieces.</li>
+			<li>Create your own small wooden projects.</li>
+            </ul>			
+
+			 <strong>Prerequisites:</strong>
+			<ul>
+			<li>Safety gloves are required.</li>
+			<li>Suitable for ages 10-14.</li>
+			<li> Minimum height required: 125 cm.</li>
+            </ul>			
+
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Monday:</strong> 4:00 PM</li>
+        <li> <strong>Saturday:</strong> 5:00 PM</li>
+    </ul>
+</div>
+            </div>
+            <div class="activity-name">Wood Working</div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="activity-box">
+            <img src="images/pottery .JPG" alt="Pottery">
+            <div class="activity-info">
+                <p><strong>Description:</strong>Create pottery pieces using clay and glazing techniques </p>
+                <p><strong>Coach:</strong> Olivia Taylor, a professional ceramic artist </p>
+               <strong>Objectives:</strong>
+			<ul>
+			<li>Learn how to shape and mold clay into creative pieces.</li>
+			<li>Understand the glazing process and how to finish pottery work.</li>
+			<li>Create personalized ceramic items.</li>
+            </ul>			
+
+			  <strong>Prerequisites:</strong>
+			<ul>
+			<li>No prior experience is required.</li>
+			<li>Suitable for ages 7-14.</li>
+			<li> Minimum height required: 105 cm.</li>
+            </ul>			
+
+<strong>Schedule:</strong>
+<div class="activity-schedule">
+    <ul>
+        <li> <strong>Thursday:</strong> 6:00 PM</li>
+        <li> <strong>Wednesday:</strong> 5:00 PM</li>
+    </ul>
+</div>
+            </div>
+            <div class="activity-name">Pottery</div>
+        </div>
+
+    </div>
+	
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+            <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+            <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+            <div class="social-media">
+                <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+                <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+                <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+            </div>
         </div>
     </div>
+    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+</footer>
+
+
+
 </body>
 </html>
+
