@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillNest</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
    
    .container {
@@ -19,6 +20,14 @@
       width: 30%;
       text-align: center;
     }
+    .bar a {
+  text-decoration: none; 
+  color: black;
+  font-weight: bold; 
+}
+.bar a:hover {
+  color: gray; 
+} 
     .bar img {
     width: 80px; 
     height: 80px;
@@ -32,7 +41,7 @@
       background-color: white;
       margin: 20px;
       padding: 20px;
-      border-style:inset;
+     
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -44,12 +53,11 @@
     .kid-profile {
       display: flex;
       align-items: center;
-      gap: 15px;
       background-color: white;
       padding: 15px;
       border-style:outset;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
       width: 50%;
     }
     div.kid-profile img {
@@ -57,23 +65,39 @@
       height: 80px;
       border-radius: 8px;
     }
-   
+    .sort-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+
+    #sort-options {
+      margin-left: auto; 
+      margin-right: 20px;
+    }
+  .sort-container h2{
+    margin-left: 50Px;
+  }
   </style>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <img src="images\SkillNest.png" alt="SkillNest">
-    <nav id="navigation">
-      <a href="home.html">Home</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="activities.html">Activities</a>
-      <a href="ParentDashBoard.html">Parent Dashboard</a>
-      <a href="admin.html">Admin</a>
-      <a href="coaches.html">Coaches</a>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+            <span>SkillNest</span>
+        </div>
+        <ul>
+            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="home.html">Home</a></li>
+            
+        </ul>
     </nav>
-  </header>
-
+</header>
   <main>
     <div class="container">
       <div class="bar">
@@ -89,7 +113,21 @@
         <p>Rate and provide feedback on Activities</p>
       </div>
     </div>
-    <h2>Your Kids</h2>
+    <div class="sort-container">
+      <h2>Your Kids</h2>
+      <select id="sort-options">
+        <option value="default">Sort by:</option>
+        <optgroup label="Sort by Name">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+        </optgroup>
+        <optgroup label="Sort by Age">
+          <option value="age-asc">Age (Youngest to Oldest)</option>
+          <option value="age-desc">Age (Oldest to Youngest)</option>
+        </optgroup>
+      </select>
+    </div>
+
     <section class="kids">
     
       <div class="kid-container">
@@ -99,19 +137,33 @@
             <h3>Sara Ahmed</h3>
             <p>Age: 8</p>
             <p>Activities: 2</p>
-            <a href="moreInfo.html">More Info</a>
           </div>
         </div>
       </div>
-    </section>
+      
+     
+      </section>
   </main>
 
+ 
   <footer>
-    <hr>
-    <p>Copyright © 2025 SkillNest. All rights reserved.</p>
-    <a href="home.html">Home</a>
-    <a href="aboutUs.html">About Us</a>
-    <a href="contactUs.html">Contact Us</a>
-  </footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/SkillNest.png" alt="SkillNest Logo">
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+            <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+            <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+            <div class="social-media">
+                <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+                <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+                <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+</footer>
 </body>
 </html>
