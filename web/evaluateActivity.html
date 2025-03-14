@@ -4,105 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Evaluation - SkillNest</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-    
         h2 {
             text-align: left;
             margin-top: 30px;
             margin-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px; 
         }
-        .container {
-    max-width: 600px;
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 20px;
-    
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
 
-select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
+        h2 img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
         .stars {
             display: flex;
-            justify-content: left;
+            justify-content: flex-start;
             margin: 15px 0;
         }
+
         .star {
-            font-size: 25px;
+            font-size: 30px;
             cursor: pointer;
             color: #ccc;
+            transition: color 0.3s ease;
         }
-       
+        
+        .star.selected {
+            color: #ffcc00; 
+        }
+
         .button-container {
             text-align: center;
             margin-top: 20px;
+            display: flex;
+            justify-content: center; 
         }
-        .button-container a {
-            background-color: #333;
+        button {
+            background: rgb(144, 122, 90);
             color: white;
-            padding: 10px 15px;
-            border: none;
+            padding: 12px 18px;
             border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
-     
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="SkillNest">
-        <h1>SkillNest</h1>
-        <div id='navigation'>
-            <a href="home.html">Home</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="activities.html">Activities</a>
-            <a href="ParentDashBoard.html">Parent Dashboard</a>
-            <a href="admin.html">Admin</a>
-            <a href="coaches.html">Coaches</a>
-        </div>
-        <hr>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/SkillNest.png" alt="SkillNest Logo">
+                <span>SkillNest</span>
+            </div>
+            <ul>
+                <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="coaches.html">Coaches</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="home.html">Home</a></li>
+            </ul>
+        </nav>
     </header>
-    <h2><img src="images\edit.png" alt="evaluate" width="40px">Activity Evaluation</h2>
-    <div class="container">
-        <label for="activity">Select an activity</label>
-        <select id="activity">
-            <option>Select an activity</option>
-            <option>Activity 1</option>
-            <option>Activity 2</option>
-            <option>Activity 3</option>
-        </select>
-        
-        <label>Rating</label>
-        <div class="stars">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
+
+    <h2><img src="images/edit.png" alt="evaluate"> Activity Evaluation</h2>
+
+  
+    <form action="submit_evaluation.php" method="POST">
+        <div class="container">
+            <label for="activity">Select an activity</label>
+            <select id="activity" name="activity" required>
+                <option value="">Select an activity</option>
+                <option value="activity1">Activity 1</option>
+                <option value="activity2">Activity 2</option>
+                <option value="activity3">Activity 3</option>
+            </select>
+
+            <label>Rating</label>
+            <div class="stars">
+                <span class="star" data-value="1" onclick="rateActivity(1)">&#9733;</span>
+                <span class="star" data-value="2" onclick="rateActivity(2)">&#9733;</span>
+                <span class="star" data-value="3" onclick="rateActivity(3)">&#9733;</span>
+                <span class="star" data-value="4" onclick="rateActivity(4)">&#9733;</span>
+                <span class="star" data-value="5" onclick="rateActivity(5)">&#9733;</span>
+            </div>
+
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Write your thoughts on the activity" required></textarea>
+
+            <div class="button-container">
+                <button type="submit">Submit</button>
+            </div>
         </div>
-        
-        <label for="feedback">Feedback</label>
-        <textarea id="feedback" rows="4" placeholder="Write your thoughts on the activity"></textarea>
-        
-        <div class="button-container">
-            <a href="ParentDashBoard.html">Submit</a>
-        </div>
-    </div>
+    </form>
+
     <footer>
-        <hr>
-        <p>Copyright © 2025 SkillNest. All rights reserved.</p>
-        <a href="home.html">Home</a>
-        <a href="aboutUs.html">About Us</a>
-        <a href="contactUs.html">Contact Us</a>
-      </footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/SkillNest.png" alt="SkillNest Logo">
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+                <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+                <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+                <div class="social-media">
+                    <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+                    <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+                    <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+    </footer>
+
+  
 </body>
 </html>
