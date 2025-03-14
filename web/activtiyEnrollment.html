@@ -3,80 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Evaluation - SkillNest</title>
+    <title>Activity Enrollment- SkillNest</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        h2 {
-            text-align: left;
-            margin-top: 30px;
-            margin-left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px; 
-        }
-
         h2 img {
-            width: 40px;
-            height: 40px;
+            width: 30px; 
+            height: 30px;
+            border-radius: 5px; 
         }
 
         .container {
-            max-width: 600px;
-            background: white;
-            margin: 20px auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 20px;
+        }
+
+        #sidebar {
+            width: 250px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+            margin-right: 40px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #sidebar h3 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
             text-align: left;
         }
 
-        select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 14px;
-        }
-
-        .stars {
+        .content {
+            flex-grow: 1;
             display: flex;
-            justify-content: flex-start;
-            margin: 15px 0;
+            gap: 20px;
         }
 
-        .star {
-            font-size: 30px;
-            cursor: pointer;
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-        
-        .star.selected {
-            color: #ffcc00; 
-        }
-
-        .button-container {
+        .activity {
+            width: 200px;
+            border: 1px ridge #ccc;
+            padding: 10px;
             text-align: center;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center; 
+            background: white;
         }
+
+        .activity input {
+            margin-top: 10px;
+        }
+
+        .activity img {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px; 
+        }
+
         button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
             background: rgb(144, 122, 90);
             color: white;
-            padding: 12px 18px;
-            border-radius: 5px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            border-radius: 5px;
         }
+
         button a {
             color: white;
             text-decoration: none;
         }
-
     </style>
 </head>
 <body>
@@ -96,35 +92,68 @@
         </nav>
     </header>
 
-    <h2><img src="images/edit.png" alt="evaluate"> Activity Evaluation</h2>
+    <h2><img src="images/puzzle-piece.png" alt="puzzle">Activity Enrollment</h2>
 
-  
-    <form action="submit_evaluation.php" method="POST">
+    <form action="submit_enrollment.php" method="POST">
         <div class="container">
-            <label for="activity">Select an activity</label>
-            <select id="activity" name="activity" required>
-                <option value="">Select an activity</option>
-                <option value="activity1">Activity 1</option>
-                <option value="activity2">Activity 2</option>
-                <option value="activity3">Activity 3</option>
-            </select>
-
-            <label>Rating</label>
-            <div class="stars">
-                <span class="star" data-value="1" onclick="rateActivity(1)">&#9733;</span>
-                <span class="star" data-value="2" onclick="rateActivity(2)">&#9733;</span>
-                <span class="star" data-value="3" onclick="rateActivity(3)">&#9733;</span>
-                <span class="star" data-value="4" onclick="rateActivity(4)">&#9733;</span>
-                <span class="star" data-value="5" onclick="rateActivity(5)">&#9733;</span>
+            <div id="sidebar">
+                <h3>Filters</h3>
+                <label for="select-child">Select Child</label>
+                <br>
+                <select id="select-child" name="child">
+                    <option>All kids</option>
+                    <option>Kid1</option>
+                </select>
+                <br>
+                <label for="select-coach">Select Coach</label>
+                <br>
+                <select id="select-coach" name="coach">
+                    <option>All Coaches</option>
+                    <optgroup label="Coach1">
+                        <option value="coach1-activity1">Calligraphy</option>
+                        <option value="coach1-activity2">Planting</option>
+                        <option value="coach1-activity3">Crochet</option>
+                    </optgroup>
+                    <optgroup label="Coach2">
+                        <option value="coach2-activity1">Painting</option>
+                        <option value="coach2-activity2">Basketball</option>
+                    </optgroup>
+                </select>
+                <h4>Prerequisites</h4>
+                <input type="radio" id="beginner" name="prerequisites" value="beginner" checked>
+                <label for="beginner">Beginner</label><br>
+                <input type="radio" id="intermediate" name="prerequisites" value="intermediate">
+                <label for="intermediate">Intermediate</label><br>
+                <input type="radio" id="advanced" name="prerequisites" value="advanced">
+                <label for="advanced">Advanced</label>
             </div>
-
-            <label for="feedback">Feedback</label>
-            <textarea id="feedback" name="feedback" rows="4" placeholder="Write your thoughts on the activity" required></textarea>
-
-            <div class="button-container">
-                <button type="submit">Submit</button>
+            
+            <div class="content">
+                <div class="activity">
+                    <img src="images/kids-calligraphy.jpg" alt="Calligraphy">
+                    <h3>Calligraphy</h3>
+                    <p>Coach: Coach1</p>
+                    <p>Prerequisites: Beginner</p>
+                    <input type="checkbox" name="activities[]" value="calligraphy">
+                </div>
+                <div class="activity">
+                    <img src="images/kids-planting.jpg" alt="planting">
+                    <h3>Planting</h3>
+                    <p>Coach: Coach1</p>
+                    <p>Prerequisites: Beginner</p>
+                    <input type="checkbox" name="activities[]" value="planting">
+                </div>
+                <div class="activity">
+                    <img src="images/kids-crochet.png" alt="crochet">
+                    <h3>Crochet</h3>
+                    <p>Coach: Coach1</p>
+                    <p>Prerequisites: Beginner</p>
+                    <input type="checkbox" name="activities[]" value="crochet">
+                </div>
             </div>
         </div>
+
+        <button type="submit"><a href="ParentDashBoard.html">Enroll your kid</a></button>
     </form>
 
     <footer>
@@ -146,7 +175,5 @@
         </div>
         <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
     </footer>
-
-  
 </body>
 </html>
