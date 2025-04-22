@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parent dashboard-SkillNest</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillNest - Parent Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-   
-   .container {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
       display: flex;
       justify-content: space-around;
       padding: 20px;
     }
-   .bar {
+
+    .bar {
       background-color: white;
       padding: 20px;
       border-radius: 8px;
@@ -20,157 +27,220 @@
       width: 30%;
       text-align: center;
     }
+
     .bar a {
-  text-decoration: none; 
-  color: black;
-  font-weight: bold; 
-}
-.bar a:hover {
-  color: gray; 
-} 
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .bar a:hover {
+      color: gray;
+    }
+
     .bar img {
-    width: 80px; 
-    height: 80px;
-    border-radius: 5px; 
-  
-}
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+    }
+
     .kids {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      background-color: white;
       margin: 20px;
       padding: 20px;
-     
+      background-color: white;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .kid-container {
       display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
       justify-content: flex-start;
-      width: 100%;
     }
+
     .kid-profile {
+      flex: 0 0 250px;
       display: flex;
       align-items: center;
-      background-color: white;
       padding: 15px;
-      border-style:outset;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      
-      width: 50%;
+      background-color: #f9f9f9;
     }
-    div.kid-profile img {
+
+    .kid-profile img {
       width: 80px;
       height: 80px;
+      margin-right: 15px;
       border-radius: 8px;
+      object-fit: cover;
     }
+
     .sort-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-     
+      padding: 0 40px;
     }
 
     #sort-options {
-      margin-left: auto; 
+      margin-left: auto;
       margin-right: 20px;
     }
-  .sort-container h2{
-    margin-left: 50Px;
-  }
+
+    .sort-container h2 {
+      margin-left: 50px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/SkillNest.png" alt="SkillNest Logo">
-            <span>SkillNest</span>
-        </div>
-        <ul>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-            <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="home.html">Home</a></li>
-            
-        </ul>
-    </nav>
-</header>
 
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/SkillNest.png" alt="SkillNest Logo" />
+      <span>SkillNest</span>
+    </div>
+    <ul>
+      <li><a href="ParentDashBoard.html" accesskey="1">Parent Dashboard</a></li>
+      <li><a href="admin.html" accesskey="2">Admin Dashboard</a></li>
+      <li><a href="coaches.html" accesskey="3">Coaches</a></li>
+      <li><a href="activities.html" accesskey="4">Activities</a></li>
+      <li><a href="home.html" accesskey="5">Home</a></li>
+    </ul>
+  </nav>
+</header>
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
       <li><a href="home.html">Home</a></li>
       <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
   </ol>
 </nav>
-  <main>
-    <div class="container">
-      <div class="bar">
-        <h2><a href="RegisterKid.html"><img src="images\add-user.png" alt="add"><br> Regster new kid</a></h2>
-        <p>Add a new kid to your family profile</p>
-      </div>
-      <div class="bar">
-        <h2><a href="activtiyEnrollment.html"><img src="images\evaluate.png" alt="enroll"><br>enroll in Activities</a></h2>
-        <p>Register your kids for various Activities</p>
-      </div>
-      <div class="bar">
-        <h2><a href="evaluateActivity.html"><img src="images\star.png" alt="star"><br>Evaluate Activities</a></h2>
-        <p>Rate and provide feedback on Activities</p>
-      </div>
+<main>
+  <div class="container">
+    <div class="bar">
+      <h2>
+        <a href="RegisterKid.html" accesskey="r">
+          <img src="images/add-user.png" alt="add"/><br>Register new kid
+        </a>
+      </h2>
+      <p>Add a new kid to your family profile</p>
     </div>
-    <div class="sort-container">
-      <h2>Your Kids</h2>
-      <select id="sort-options">
-        <option value="default">Sort by:</option>
-        <optgroup label="Sort by Name">
-          <option value="name-asc">Name (A-Z)</option>
-          <option value="name-desc">Name (Z-A)</option>
-        </optgroup>
-        <optgroup label="Sort by Age">
-          <option value="age-asc">Age (Youngest to Oldest)</option>
-          <option value="age-desc">Age (Oldest to Youngest)</option>
-        </optgroup>
-      </select>
+    <div class="bar">
+      <h2>
+        <a href="activtiyEnrollment.html" accesskey="e">
+          <img src="images/evaluate.png" alt="enroll"/><br>Enroll in Activities
+        </a>
+      </h2>
+      <p>Register your kids for various Activities</p>
     </div>
+    <div class="bar">
+      <h2>
+        <a href="evaluateActivity.html" accesskey="v">
+          <img src="images/star.png" alt="star"/><br>Evaluate Activities
+        </a>
+      </h2>
+      <p>Rate and provide feedback on Activities</p>
+    </div>
+  </div>
 
-    <section class="kids">
-    
-      <div class="kid-container">
+  <div class="sort-container">
+    <h2>Your Kids</h2>
+    <select id="sort-options" accesskey="s">
+      <option value="default">Sort by:</option>
+      <optgroup label="Sort by Name">
+        <option value="name-asc">Name (A-Z)</option>
+        <option value="name-desc">Name (Z-A)</option>
+      </optgroup>
+      <optgroup label="Sort by Age">
+        <option value="age-asc">Age (Youngest to Oldest)</option>
+        <option value="age-desc">Age (Oldest to Youngest)</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <section class="kids">
+    <div class="kid-container" id="kids-list">
+      <!-- Kids will be rendered here -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/SkillNest.png" alt="SkillNest Logo" />
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+      <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+      <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+      <div class="social-media">
+        <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+        <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+        <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </div>
+  <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+</footer>
+
+<script>
+  const defaultKids = [
+    { name: "Sara Ahmed", age: 8, activities: 2, image: "images/sara.png" },
+    { name: "Ahmed Khalid", age: 6, activities: 1, image: "images/ahmed.png" },
+    { name: "Layla Nasser", age: 10, activities: 3, image: "images/layla.png" }
+  ];
+
+  localStorage.setItem("kids", JSON.stringify(defaultKids)); // Reset for testing
+
+  function loadKids() {
+    let kids = JSON.parse(localStorage.getItem("kids")) || [];
+    return kids;
+  }
+
+  function displayKids(kids) {
+    const container = document.getElementById("kids-list");
+    container.innerHTML = "";
+
+    kids.forEach(kid => {
+      container.innerHTML += `
         <div class="kid-profile">
-          <img src="images\skillnest_kid.png.png" alt="Sara Ahmed">
+          <img src="${kid.image}" alt="${kid.name}">
           <div>
-            <h3>Sara Ahmed</h3>
-            <p>Age: 8</p>
-            <p>Activities: 2</p>
+            <h3>${kid.name}</h3>
+            <p>Age: ${kid.age}</p>
+            <p>Activities: ${kid.activities}</p>
           </div>
         </div>
-      </div>
-      
-     
-      </section>
-  </main>
+      `;
+    });
+  }
 
- 
-  <footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="images/SkillNest.png" alt="SkillNest Logo">
-        </div>
-        <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
-            <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
-            <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
-            <div class="social-media">
-                <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
-                <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
-                <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
-            </div>
-        </div>
-    </div>
-    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
-</footer>
+  function sortKids(kids, method) {
+    if (method === "name-asc") {
+      kids.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (method === "name-desc") {
+      kids.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (method === "age-asc") {
+      kids.sort((a, b) => a.age - b.age);
+    } else if (method === "age-desc") {
+      kids.sort((a, b) => b.age - a.age);
+    }
+    return kids;
+  }
+
+  document.getElementById("sort-options").addEventListener("change", function () {
+    let kids = loadKids();
+    const sortedKids = sortKids(kids, this.value);
+    displayKids(sortedKids);
+  });
+
+  const kids = loadKids();
+  displayKids(kids);
+</script>
+
 </body>
 </html>
