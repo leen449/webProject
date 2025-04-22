@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkillNest - Parent Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -95,13 +97,19 @@
   </style>
 </head>
 <body>
-
+<script src="script.js"></script>
 <header>
   <nav class="navbar">
     <div class="logo">
       <img src="images/SkillNest.png" alt="SkillNest Logo" />
       <span>SkillNest</span>
     </div>
+
+    <button id="themeToggle" class="theme-btn">
+      <span class="light-icon">🌞</span>
+      <span class="dark-icon" style="display:none">🌙</span>
+  </button>
+
     <ul>
       <li><a href="ParentDashBoard.html" accesskey="1">Parent Dashboard</a></li>
       <li><a href="admin.html" accesskey="2">Admin Dashboard</a></li>
@@ -193,23 +201,29 @@
     return kids;
   }
 
-  function displayKids(kids) {
+function displayKids(kids) {
     const container = document.getElementById("kids-list");
     container.innerHTML = "";
 
-    kids.forEach(kid => {
-      container.innerHTML += `
-        <div class="kid-profile">
-          <img src="${kid.image}" alt="${kid.name}">
-          <div>
-            <h3>${kid.name}</h3>
-            <p>Age: ${kid.age}</p>
-            <p>Activities: ${kid.activities}</p>
-          </div>
-        </div>
-      `;
+    kids.forEach((kid, index) => {
+        const dob = new Date(kid.dob);
+        const ageDiffMs = Date.now() - dob.getTime();
+        const ageDate = new Date(ageDiffMs);
+        const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+        container.innerHTML += `
+            <div class="kid-profile">
+                <img src="${kid.image}" alt="${kid.name}">
+                <div>
+                    <h3>${kid.name}</h3>
+                    <p><strong>Age:</strong> ${age}</p>
+                    <p><strong>Activities:</strong> ${kid.activities || "None"}</p>
+                </div>
+            </div>
+        `;
     });
-  }
+}
+
 
   function sortKids(kids, method) {
     if (method === "name-asc") {
