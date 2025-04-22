@@ -204,7 +204,7 @@
 
             <div class="button-container">
                 <button type="button" class="cancel-btn" onclick="window.location.href='ParentDashBoard.html';">Cancel</button>
-                <button type="submit" class="register-btn">Register</button>
+                <button type="submit" class="register-btn"  >Register</button>
             </div>
         </form>
     </div>
@@ -229,6 +229,97 @@
     </div>
     <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
 </footer>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+  
+      const name = document.getElementById("full-name").value.trim();
+      const dob = document.getElementById("dob").value;
+      const gender = document.getElementById("gender").value;
+      const weight = document.getElementById("weight").value.trim();
+      const height = document.getElementById("height").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const fileInput = document.getElementById("file-input");
+      const profileImg = document.querySelector(".profile-upload img");
+  
+      // Validation
+      if (!name || !dob || !gender || !weight || !height || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+      }
+      if (/^\d/.test(name)) {
+          alert("Name cannot start with a number.");
+          return;
+      }
+      if (!/^\d{10}$/.test(phone)) {
+          alert("Phone number must be exactly 10 digits.");
+          return;
+      }
+      if (!email.includes("@")) {
+          alert("Please enter a valid email address.");
+          return;
+      }
+      const selectedDate = new Date(dob);
+      const maxDate = new Date("2020-12-31");
+      if (selectedDate < maxDate == false) {
+          alert("Child must be born before 2021 (at least 5 years old).");
+          return;
+      }
+  
+      // Prepare data
+      let reader = new FileReader();
+      reader.onload = function (e) {
+          const newKid = {
+              name,
+              dob,
+              gender,
+              weight,
+              height,
+              email,
+              phone,
+              image: e.target.result // base64 image string
+          };
+  
+          // Get existing kids or start fresh
+          let kids = JSON.parse(localStorage.getItem("kids")) || [];
+          kids.push(newKid);
+          localStorage.setItem("kids", JSON.stringify(kids));
+  
+          // Redirect
+          window.location.href = "ParentDashBoard.html";
+      };
+  
+      if (fileInput.files[0]) {
+          reader.readAsDataURL(fileInput.files[0]);
+      } else {
+    
+          const defaultImage = profileImg.src;
+          const newKid = {
+              name,
+              dob,
+              gender,
+              weight,
+              height,
+              email,
+              phone,
+              image: defaultImage
+          };
+  
+          let kids = JSON.parse(localStorage.getItem("kids")) || [];
+          kids.push(newKid);
+          localStorage.setItem("kids", JSON.stringify(kids));
+  
+          window.location.href = "ParentDashBoard.html";
+      }
+  });
+  document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        window.location.href = "ParentDashBoard.html";
+    });
+  </script>
+  
+  
 
 </body>
 </html>
