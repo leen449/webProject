@@ -1,0 +1,23 @@
+/* Dark theme classes - only targets elements we want to change */
+.dark-theme {
+    background-color: #2b2525 !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-theme .card {
+    background-color: #2d2d2d !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark-theme .navbar {
+    background-color: #2b2525 !important;
+}
+
+.dark-theme .table-row:hover {
+    background-color: #444 !important;
+}
+
+/* Ensures theme icons don't inherit dark text color */
+.dark-theme .theme-btn span {
+    color: white !important;
+}
