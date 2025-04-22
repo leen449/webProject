@@ -44,9 +44,7 @@
             display: none;
         }
         
-        .coach-info:target {
-            display: block;
-        }
+        
     </style>
 </head>
 <body>
@@ -309,5 +307,34 @@
     </footer>
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const coachItems = document.querySelectorAll('.coach-item');
+            const coachInfos = document.querySelectorAll('.coach-info');
+            
+            // Show first coach info initially
+            coachInfos[0].style.display = 'block';
+            
+            // Hide others (optional, if not already hidden via CSS)
+            for (let i = 1; i < coachInfos.length; i++) {
+                coachInfos[i].style.display = 'none';
+            }
+            
+            // Add click handlers
+            coachItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Hide all coach infos
+                    coachInfos.forEach(info => {
+                        info.style.display = 'none';
+                    });
+                    
+                    // Show clicked coach's info
+                    coachInfos[index].style.display = 'block';
+                });
+            });
+        });
+        </script>
 </body>
 </html>
