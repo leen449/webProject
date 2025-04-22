@@ -197,3 +197,37 @@ input[type="search"]:focus + label {
     visibility: visible;
     opacity: 1;
 }*/
+
+
+/* Show More Button Styling */
+.kids-more-btn {
+    display: block;
+    margin: 25px auto;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #1e2c35, #f7bb4a00);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(74, 108, 247, 0.3);
+    transition: all 0.3s ease;
+}
+
+.kids-more-btn:hover {
+    background: linear-gradient(135deg, #5d7de8, #3a5bd9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
+}
+
+.kids-more-btn.active {
+    background: linear-gradient(135deg, #f03939, #830f0f);
+    box-shadow: 0 3px 10px rgba(247, 74, 74, 0.3);
+}
+
+.kids-more-btn.active:hover {
+    background: linear-gradient(135deg, #e85d5d, #d93a3a);
+}
+
+
