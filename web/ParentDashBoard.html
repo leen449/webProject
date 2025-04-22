@@ -188,14 +188,6 @@
 </footer>
 
 <script>
-  const defaultKids = [
-    { name: "Sara Ahmed", age: 8, activities: 2, image: "images/sara.png" },
-    { name: "Ahmed Khalid", age: 6, activities: 1, image: "images/ahmed.png" },
-    { name: "Layla Nasser", age: 10, activities: 3, image: "images/layla.png" }
-  ];
-
-  localStorage.setItem("kids", JSON.stringify(defaultKids)); // Reset for testing
-
   function loadKids() {
     let kids = JSON.parse(localStorage.getItem("kids")) || [];
     return kids;
@@ -238,9 +230,11 @@
     displayKids(sortedKids);
   });
 
+  // Load and display kids on page load
   const kids = loadKids();
   displayKids(kids);
 </script>
+
 
 </body>
 </html>
