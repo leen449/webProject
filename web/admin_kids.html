@@ -62,5 +62,47 @@
     <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
 </footer>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const kidsList = document.querySelector('.table-list');
+    const kids = kidsList.querySelectorAll('.table-row:not(.header)');
+    const moreBtn = document.createElement('button');
+    
+    // Hide all kids except first 2
+    kids.forEach((kid, index) => {
+        if (index >= 2) {
+            kid.style.opacity = '0';
+            kid.style.maxHeight = '0';
+            kid.style.overflow = 'hidden';
+            kid.style.transition = 'all 0.3s ease';
+        }
+    });
+
+    // Create styled "More" button
+    moreBtn.textContent = 'Show More ↓';
+    moreBtn.className = 'kids-more-btn'; // New class for styling
+    kidsList.parentNode.insertBefore(moreBtn, kidsList.nextSibling);
+
+    // Toggle kids visibility with animation
+    let showAll = false;
+    moreBtn.addEventListener('click', () => {
+        showAll = !showAll;
+        
+        kids.forEach((kid, index) => {
+            if (index >= 2) {
+                kid.style.opacity = showAll ? '1' : '0';
+                kid.style.maxHeight = showAll ? '100px' : '0';
+                kid.style.padding = showAll ? '20px 0' : '0';
+                kid.style.borderTop = showAll ? '1px solid #ddd' : '0';
+            }
+        });
+        
+        moreBtn.textContent = showAll ? 'Show Less ↑' : 'Show More ↓';
+        moreBtn.classList.toggle('active', showAll);
+    });
+});
+    </script>
+    
 </body>
 </html>
