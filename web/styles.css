@@ -48,28 +48,50 @@ header {
 }
 /*breadcrumbs*/
 
-nav[aria-label="Breadcrumb"] ol {
-    list-style: none;
-    padding: 0;
-    margin: 15px;
+
+.breadcrumbs-wrapper {
+    margin: 0 50px;
+    padding-top: 50px;
+}
+
+.breadcrumbs {
+    font-size: 0.99rem;
+}
+
+.breadcrumbs ol {
     display: flex;
     gap: 8px;
-    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0 ;
+    font-size: large;
+    font-weight: bold;
+    padding:20px;
+    align-items: center;
 }
-nav[aria-label="Breadcrumb"] ol li {
-    display: inline;
-}
-nav[aria-label="Breadcrumb"] ol li:not(:last-child)::after {
-    content: ">";
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '>';
     margin-left: 8px;
+    color: #949090;
+
 }
-nav[aria-label="Breadcrumb"] ol li a {
+
+.breadcrumbs a {
+    color: #6f4e37;
     text-decoration: none;
-    color: #3e3e3e;
+    transition: color 0.2s;
 }
-nav[aria-label="Breadcrumb"] ol li a:hover {
+
+.breadcrumbs a:hover {
     text-decoration: underline;
 }
+
+/* Dark theme support - won't affect light theme */
+.dark-theme .breadcrumbs a {
+    color: #6f4e37;
+}
+
 /*breadcrumbs*/
 
 body {
@@ -450,3 +472,13 @@ footer {
 .star-rating .far {
     color: #D3D3D3; 
 }
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin-left: 10px;
+}
+
