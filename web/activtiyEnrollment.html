@@ -1,341 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Enrollment- SkillNest</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="theme.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Enrollment - SkillNest</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    h2 img {
+      width: 30px; 
+      height: 30px;
+      border-radius: 5px; 
+    }
 
-    <style>
-        h2 img {
-            width: 30px; 
-            height: 30px;
-            border-radius: 5px; 
-        }
+    .container {
+      display: flex;
+      padding: 20px;
+    }
 
-        .container {
-            display: flex;
-            padding: 20px;
-        }
+    #sidebar {
+      width: 250px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #f8f8f8;
+      margin-right: 40px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        #sidebar {
-            width: 250px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background: #f8f8f8;
-            margin-right: 40px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    #sidebar h3 {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: left;
+    }
 
-        #sidebar h3 {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-            text-align: left;
-        }
+    .content {
+      flex-grow: 1;
+      display: flex;
+      gap: 20px;
+    }
 
-        .content {
-            flex-grow: 1;
-            display: flex;
-            gap: 20px;
-        }
+    .activity {
+      width: 200px;
+      border: 1px ridge #ccc;
+      padding: 10px;
+      text-align: center;
+      background: white;
+    }
 
-        .activity {
-            width: 200px;
-            border: 1px ridge #ccc;
-            padding: 10px;
-            text-align: center;
-            background: white;
-        }
+    .activity input {
+      margin-top: 10px;
+    }
 
-        .activity input {
-            margin-top: 10px;
-        }
+    .activity img {
+      width: 100%;
+      height: 150px;
+      border-radius: 5px; 
+    }
 
-        .activity img {
-            width: 100%;
-            height: 150px;
-            border-radius: 5px; 
-        }
-
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background: rgb(144, 122, 90);
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: rgb(144, 122, 90);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    <script src="script.js"></script>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/SkillNest.png" alt="SkillNest Logo">
+        <span>SkillNest</span>
+      </div>
+      <button id="themeToggle" class="theme-btn">
+        <span class="light-icon">🌞</span>
+        <span class="dark-icon" style="display:none">🌙</span>
+      </button>
+      <ul>
+        <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="coaches.html">Coaches</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="home.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/SkillNest.png" alt="SkillNest Logo">
-                <span>SkillNest</span>
-            </div>
+  <nav class="breadcrumbs">
+    <ol>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+      <li><a href="RegisterKid.html">Register New Kid</a></li>
+      <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
+    </ol>
+  </nav>
 
-            <button id="themeToggle" class="theme-btn">
-                <span class="light-icon">🌞</span>
-                <span class="dark-icon" style="display:none">🌙</span>
-            </button> 
+  <h2><img src="images/puzzle-piece.png" alt="puzzle"> Activity Enrollment</h2>
 
-            <ul>
-                <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-                <li><a href="admin.html">Admin Dashboard</a></li>
-                <li><a href="coaches.html">Coaches</a></li>
-                <li><a href="activities.html">Activities</a></li>
-                <li><a href="home.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
+  <form id="enrollmentForm">
+    <div class="container">
+      <div id="sidebar">
+        <h3>Filters</h3>
+        <label for="select-child">Select Child</label><br>
+        <select id="select-child" name="child"></select><br>
 
-    <nav aria-label="Breadcrumb" class="breadcrumbs">
-        <ol>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-            <li><a href="RegisterKid.html">Register New Kid</a></li>
-            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
-        </ol>
-      </nav>
+        <label for="select-coach">Select Coach</label><br>
+        <select id="select-coach" name="coach"></select><br>
+        <h4>Prerequisites</h4>
 
-    <h2><img src="images/puzzle-piece.png" alt="puzzle">Activity Enrollment</h2>
+        <label for="age-range">Select Age Range:</label>
+        <select id="age-range">
+          <option value="">Any</option>
+          <option value="8-9">8–9</option>
+          <option value="10-11">10–11</option>
+          <option value="12-13">12–13</option>
+          <option value="14+">14+</option>
+        </select><br><br>
+        
+        <label for="height-range">Select Height Range (cm):</label>
+        <select id="height-range">
+          <option value="">Any</option>
+          <option value="100-120">100–120 cm</option>
+          <option value="121-140">121–140 cm</option>
+          <option value="141-160">141–160 cm</option>
+          <option value="161+">161+ cm</option>
+        </select><br><br>
+        
+        <label for="experience">Experience Level:</label>
+        <select id="experience">
+          <option value="">Any</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
 
-    <form action="submit_enrollment.php" method="POST">
-        <div class="container">
-            <div id="sidebar">
-                <h3>Filters</h3>
-                <label for="select-child">Select Child</label>
-                <br>
-                <select id="select-child" name="child">
-                    <option>All kids</option>
-                    <option>Kid1</option>
-                </select>
-                <br>
-                <label for="select-coach">Select Coach</label>
-                <br>
-                <select id="select-coach" name="coach">
-                    <option>All Coaches</option>
-                    <optgroup label="Coach1">
-                        <option value="coach1-activity1">Calligraphy</option>
-                        <option value="coach1-activity2">Planting</option>
-                        <option value="coach1-activity3">Crochet</option>
-                    </optgroup>
-                    <optgroup label="Coach2">
-                        <option value="coach2-activity1">Painting</option>
-                        <option value="coach2-activity2">Basketball</option>
-                    </optgroup>
-                </select>
-                <h4>Prerequisites</h4>
+      <div class="content"></div>
+    </div>
 
-                <label for="age-range">Select Age Range:</label>
-                <select id="age-range">
-                  <option value="">Any</option>
-                  <option value="8-9">8–9</option>
-                  <option value="10-11">10–11</option>
-                  <option value="12-13">12–13</option>
-                  <option value="14+">14+</option>
-                </select><br><br>
-                
-                <label for="height-range">Select Height Range (cm):</label>
-                <select id="height-range">
-                  <option value="">Any</option>
-                  <option value="100-120">100–120 cm</option>
-                  <option value="121-140">121–140 cm</option>
-                  <option value="141-160">141–160 cm</option>
-                  <option value="161+">161+ cm</option>
-                </select><br><br>
-                
-                <label for="experience">Experience Level:</label>
-                <select id="experience">
-                  <option value="">Any</option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Advanced">Advanced</option>
-                </select>
-                
-                
-            </div>
-            
-            <div class="content">
-                <div class="activity">
-                    <img src="images/kids-calligraphy.jpg" alt="Calligraphy">
-                    <h3>Calligraphy</h3>
-                    <p>Coach: Coach1</p>
-                    <p>Prerequisites: Beginner</p>
-                    <input type="checkbox" name="activities[]" value="calligraphy">
-                </div>
-                <div class="activity">
-                    <img src="images/kids-planting.jpg" alt="planting">
-                    <h3>Planting</h3>
-                    <p>Coach: Coach1</p>
-                    <p>Prerequisites: Beginner</p>
-                    <input type="checkbox" name="activities[]" value="planting">
-                </div>
-                <div class="activity">
-                    <img src="images/kids-crochet.png" alt="crochet">
-                    <h3>Crochet</h3>
-                    <p>Coach: Coach1</p>
-                    <p>Prerequisites: Beginner</p>
-                    <input type="checkbox" name="activities[]" value="crochet">
-                </div>
-            </div>
+    <button type="submit">Enroll your kid</button>
+  </form>
+
+
+
+
+  
+  
+  <style>
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+  
+    .modal-box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+    }
+  
+    #closeModalBtn {
+      margin-top: 15px;
+      padding: 6px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  
+    #closeModalBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/SkillNest.png" alt="SkillNest Logo">
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
+        <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
+        <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
+        <div class="social-media">
+          <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
+          <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
+          <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
         </div>
-
-        <button type="submit"><a href="ParentDashBoard.html">Enroll your kid</a></button>
-    </form>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/SkillNest.png" alt="SkillNest Logo">
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@skillnest.com">info@skillnest.com</a></p>
-                <p>Phone: <a href="tel:+9661234567890">+966 123 456 7890</a></p>
-                <p>Address: 123 Creative Street, Riyadh, Saudi Arabia</p>
-                <div class="social-media">
-                    <a href="https://facebook.com/skillnest" target="_blank">Facebook</a>
-                    <a href="https://instagram.com/skillnest" target="_blank">Instagram</a>
-                    <a href="https://twitter.com/skillnest" target="_blank">Twitter</a>
-                </div>
-            </div>
-        </div>
-        <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Kids from localStorage
-            const kids = JSON.parse(localStorage.getItem('kids')) || [];
-        
-            const selectChild = document.getElementById('select-child');
-            selectChild.innerHTML = `<option value="">-- Select Kid --</option>`;
-            kids.forEach(kid => {
-                const option = document.createElement('option');
-                option.value = kid.name;
-                option.textContent = kid.name;
-                selectChild.appendChild(option);
-            });
-        
-            // Activities data: name, coach, prerequisite
-            const activities = [
-                { name: 'Calligraphy', coach: 'Coach1', prereq: 'Beginner' },
-                { name: 'Planting', coach: 'Coach1', prereq: 'Beginner' },
-                { name: 'Crochet', coach: 'Coach1', prereq: 'Beginner' },
-                { name: 'Painting', coach: 'Coach2', prereq: 'Intermediate' },
-                { name: 'Basketball', coach: 'Coach2', prereq: 'Advanced' },
-                { name: 'Robotics', coach: 'Coach3', prereq: 'Intermediate' },
-                { name: 'Music', coach: 'Coach3', prereq: 'Beginner' }
-            ];
-        
-            const coachSet = new Set();
-            const prereqSet = new Set();
-            const coachSelect = document.getElementById('select-coach');
-        
-            coachSelect.innerHTML = '<option value="">-- All Coaches --</option>';
-        
-            activities.forEach(activity => {
-                if (!coachSet.has(activity.coach)) {
-                    coachSet.add(activity.coach);
-                    const opt = document.createElement('option');
-                    opt.value = activity.coach;
-                    opt.textContent = activity.coach;
-                    coachSelect.appendChild(opt);
-                }
-                prereqSet.add(activity.prereq);
-            });
-        
-            const prereqRadios = document.querySelectorAll('input[name="prerequisites"]');
-            const contentDiv = document.querySelector('.content');
-        
-            function renderActivities(filterCoach = '', filterPrereq = '') {
-                contentDiv.innerHTML = '';
-                activities.forEach(act => {
-                    if ((filterCoach && act.coach !== filterCoach) || (filterPrereq && act.prereq !== filterPrereq)) {
-                        return;
-                    }
-                    const div = document.createElement('div');
-                    div.className = 'activity';
-                    div.innerHTML = `
-                        <img src="images/kids-${act.name.toLowerCase()}.jpg" alt="${act.name}">
-                        <h3>${act.name}</h3>
-                        <p>Coach: ${act.coach}</p>
-                        <p>Prerequisites: ${act.prereq}</p>
-                        <input type="checkbox" name="activities" value="${act.name}">
-                    `;
-                    contentDiv.appendChild(div);
-                });
-            }
-        
-            // Initial render
-            renderActivities();
-        
-            // Filter behavior
-            coachSelect.addEventListener('change', () => {
-                const selectedCoach = coachSelect.value;
-                const selectedPrereq = document.querySelector('input[name="prerequisites"]:checked').value;
-                renderActivities(selectedCoach, selectedPrereq);
-            });
-        
-            prereqRadios.forEach(radio => {
-                radio.addEventListener('change', () => {
-                    const selectedCoach = coachSelect.value;
-                    const selectedPrereq = document.querySelector('input[name="prerequisites"]:checked').value;
-                    renderActivities(selectedCoach, selectedPrereq);
-                });
-            });
-        
-            // Form validation and submission
-            const form = document.querySelector('form');
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-        
-                const selectedKid = selectChild.value;
-                const checkedActivities = [...document.querySelectorAll('input[name="activities"]:checked')];
-        
-                if (!selectedKid) {
-                    alert("Please select a kid.");
-                    return;
-                }
-        
-                if (checkedActivities.length === 0) {
-                    alert("Please select at least one activity.");
-                    return;
-                }
-        
-                const results = document.createElement('div');
-                results.innerHTML = `<h3>Enrollment Summary:</h3><p><strong>Kid:</strong> ${selectedKid}</p>`;
-                checkedActivities.forEach(cb => {
-                    const activityData = activities.find(a => a.name === cb.value);
-                    results.innerHTML += `<p>${activityData.name} - Coach: ${activityData.coach}</p>`;
-                });
-        
-                const existingResults = document.getElementById('results');
-                if (existingResults) {
-                    existingResults.remove();
-                }
-        
-                results.id = 'results';
-                document.body.appendChild(results);
-        
-                form.reset();
-                renderActivities(); 
-            });
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem('kids')) {
+            localStorage.setItem('kids', JSON.stringify([{ name: "Ali" }, { name: "Sara" }, { name: "Omar" }]));
+        }
+    
+        const kids = JSON.parse(localStorage.getItem('kids'));
+        const activities = [
+            { id: 1, name: "planting", level: "Beginner", age: "8-9", height: "100-120", coach: "Coach Ahmad", image: "images/kids-planting.jpg" },
+            { id: 2, name: "Calligraphy", level: "Intermediate", age: "10-11", height: "121-140", coach: "Coach Layla", image: "images/kids-calligraphy.jpg" },
+            { id: 3, name: "crochet", level: "Advanced", age: "12-13", height: "141-160", coach: "Coach Fadi", image: "images/kids-crochet.png" },
+            { id: 4, name: "painting", level: "Beginner", age: "8-9", height: "100-120", coach: "Coach Ahmad", image: "images/painting.jpg" },
+            { id: 5, name: "planting", level: "Intermediate", age: "12-13", height: "121-140", coach: "Coach Layla", image: "images/kids-planting.jpg" },
+            { id: 6, name: "Calligraphy", level: "Advanced", age: "14+", height: "161+", coach: "Coach Fadi", image: "images/kids-calligraphy.jpg" },
+            { id: 7, name: "Calligraphy", level: "Beginner", age: "8-9", height: "100-120", coach: "Coach Ahmad", image: "images/kids-calligraphy.jpg" }
+        ];
+    
+        const childSelect = document.getElementById("select-child");
+        const coachSelect = document.getElementById("select-coach");
+        const ageSelect = document.getElementById("age-range");
+        const heightSelect = document.getElementById("height-range");
+        const experienceSelect = document.getElementById("experience");
+    
+        kids.forEach((kid, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = kid.name;
+            childSelect.appendChild(option);
         });
-        </script>
-        
+    
+        const coaches = [...new Set(activities.map(a => a.coach))];
+        coaches.forEach(coach => {
+            const option = document.createElement("option");
+            option.value = coach;
+            option.textContent = coach;
+            coachSelect.appendChild(option);
+        });
+    
+        function filterAndDisplayActivities() {
+            const selectedCoach = coachSelect.value;
+            const selectedAge = ageSelect.value;
+            const selectedHeight = heightSelect.value;
+            const selectedLevel = experienceSelect.value;
+    
+            const filtered = activities.filter(activity =>
+                (!selectedCoach || activity.coach === selectedCoach) &&
+                (!selectedAge || activity.age === selectedAge) &&
+                (!selectedHeight || activity.height === selectedHeight) &&
+                (!selectedLevel || activity.level === selectedLevel)
+            );
+    
+            renderActivities(filtered);
+        }
+    
+        function renderActivities(activitiesList) {
+            const content = document.querySelector(".content");
+            content.innerHTML = activitiesList.length === 0
+                ? "<p>No activities found based on your filters.</p>"
+                : activitiesList.map(activity => `
+                    <div class="activity">
+                        <img src="${activity.image}" alt="${activity.name}" class="activity-image" />
+                        <h4>${activity.name}</h4>
+                        <p>Level: ${activity.level}</p>
+                        <p>Coach: ${activity.coach}</p>
+                        <label>
+                            <input type="checkbox" class="activity-checkbox" value="${activity.id}">
+                        </label>
+                    </div>
+                `).join('');
+        }
+    
+        [childSelect, coachSelect, ageSelect, heightSelect, experienceSelect].forEach(select =>
+            select.addEventListener("change", filterAndDisplayActivities)
+        );
+    
+        const enrollmentForm = document.getElementById("enrollmentForm");
+        enrollmentForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            const selectedChildIndex = childSelect.value;
+            if (selectedChildIndex === "") {
+                alert("Please select a child.");
+                return;
+            }
+    
+            const selectedCheckboxes = document.querySelectorAll(".activity-checkbox:checked");
+            if (selectedCheckboxes.length === 0) {
+                alert("Please select at least one activity.");
+                return;
+            }
+    
+            const selectedIds = Array.from(selectedCheckboxes).map(cb => parseInt(cb.value));
+            const selectedKid = kids[selectedChildIndex].name;
+            const enrolledActivities = activities.filter(act => selectedIds.includes(act.id));
+    
+            const activityInfo = enrolledActivities.map(activity =>
+                `<li>${activity.name} (Coach: ${activity.coach})</li>`).join("");
+    
+            let modal = document.getElementById("successModal");
+            if (!modal) {
+                modal = document.createElement("div");
+                modal.id = "successModal";
+                modal.className = "modal-overlay";
+                modal.innerHTML = `
+                    <div class="modal-box">
+                        <h3>Enrollment Successful!</h3>
+                        <div id="enrollmentResults"></div>
+                        <button id="closeModalBtn">Close</button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+    
+            document.getElementById("enrollmentResults").innerHTML = `
+                <h3>Enrollment Information</h3>
+                <p>Kid: ${selectedKid}</p>
+                <ul>${activityInfo}</ul>
+            `;
+            modal.style.display = "flex";
+    
+            document.getElementById("closeModalBtn").onclick = () => {
+                modal.style.display = "none";
+            };
+    
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 3000);
+    
+            enrollmentForm.reset();
+            filterAndDisplayActivities();
+        });
+    
+        filterAndDisplayActivities();
+    });
+    </script>
+    
 </body>
 </html>
