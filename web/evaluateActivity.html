@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Evaluation - SkillNest</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="theme.css">
-
     <style>
         h2 {
-            text-align: left;
-            margin-top: 30px;
-            margin-left: 20px;
             display: flex;
             align-items: center;
-            gap: 10px; 
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-right: 150px; 
         }
 
         h2 img {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            margin-right: 10px;
         }
 
         .container {
@@ -65,6 +62,7 @@
             display: flex;
             justify-content: center; 
         }
+
         button {
             background: rgb(144, 122, 90);
             color: white;
@@ -74,28 +72,15 @@
             cursor: pointer;
             font-size: 16px;
         }
-        button a {
-            color: white;
-            text-decoration: none;
-        }
-
     </style>
 </head>
 <body>
-    <script src="script.js"></script>
-
     <header>
         <nav class="navbar">
             <div class="logo">
                 <img src="images/SkillNest.png" alt="SkillNest Logo">
                 <span>SkillNest</span>
             </div>
-
-            <button id="themeToggle" class="theme-btn">
-                <span class="light-icon">🌞</span>
-                <span class="dark-icon" style="display:none">🌙</span>
-            </button> 
-
             <ul>
                 <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
                 <li><a href="admin.html">Admin Dashboard</a></li>
@@ -105,20 +90,10 @@
             </ul>
         </nav>
     </header>
-    <nav aria-label="Breadcrumb" class="breadcrumbs">
-        <ol>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-            <li><a href="RegisterKid.html">Register New Kid</a></li>
-            <li><a href="activtiyEnrollment.html">Activity Enrollment</a></li>
-            <li><a href="evaluateActivity.html">Evaluate Activity</a></li>
-        </ol>
-      </nav>
 
     <h2><img src="images/edit.png" alt="evaluate"> Activity Evaluation</h2>
 
-  
-    <form action="submit_evaluation.php" method="POST">
+    <form>
         <div class="container">
             <label for="activity">Select an activity</label>
             <select id="activity" name="activity" required>
@@ -166,6 +141,41 @@
         <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
     </footer>
 
-  
+    <script>
+        let selectedRating = 0;
+
+        function rateActivity(value) {
+            selectedRating = value;
+
+            const stars = document.querySelectorAll(".star");
+            stars.forEach((star, index) => {
+                star.classList.toggle("selected", index < value);
+            });
+        }
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const activitySelect = document.getElementById("activity");
+            const selectedActivity = activitySelect.value;
+
+            if (!selectedActivity) {
+                alert("Please select an activity.");
+                return;
+            }
+
+            if (selectedRating === 0) {
+                alert("Please rate the activity by selecting stars.");
+                return;
+            }
+
+            alert("Thank you for your feedback!");
+
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 500);
+        });
+    </script>
 </body>
 </html>
