@@ -170,7 +170,7 @@
 
   <section class="kids">
     <div class="kid-container" id="kids-list">
-      <!-- Kids will be rendered here -->
+    
     </div>
   </section>
 </main>
@@ -194,22 +194,44 @@
   </div>
   <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
 </footer>
-
 <script>
   function loadKids() {
-    let kids = JSON.parse(localStorage.getItem("kids")) || [];
+    let kids = JSON.parse(localStorage.getItem("kids"));
+    
+    if (!kids || kids.length === 0) {
+      kids = [
+        {
+          name: "Layla Nasser",
+          dob: "2015-05-12", 
+          image: "images/Layla.png", 
+          activities: "Basketball"
+        },
+        {
+          name: "Ahmed Saleh",
+          dob: "2016-07-21", 
+          image: "images/ahmed.png", 
+          activities: "Swimming"
+        },
+        {
+          name: "Sara Ahmed",
+          dob: "2017-09-10", 
+          image: "images/sara.png", 
+          activities: "Art"
+        }
+      ];
+      
+      localStorage.setItem("kids", JSON.stringify(kids));
+    }
+
     return kids;
   }
 
-function displayKids(kids) {
+  function displayKids(kids) {
     const container = document.getElementById("kids-list");
     container.innerHTML = "";
 
-    kids.forEach((kid, index) => {
-        const dob = new Date(kid.dob);
-        const ageDiffMs = Date.now() - dob.getTime();
-        const ageDate = new Date(ageDiffMs);
-        const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+    kids.forEach((kid) => {
+        const age = calculateAge(kid.dob);
 
         container.innerHTML += `
             <div class="kid-profile">
@@ -222,8 +244,7 @@ function displayKids(kids) {
             </div>
         `;
     });
-}
-
+  }
 
   function sortKids(kids, method) {
     if (method === "name-asc") {
@@ -231,11 +252,18 @@ function displayKids(kids) {
     } else if (method === "name-desc") {
       kids.sort((a, b) => b.name.localeCompare(a.name));
     } else if (method === "age-asc") {
-      kids.sort((a, b) => a.age - b.age);
+      kids.sort((a, b) => calculateAge(a.dob) - calculateAge(b.dob));
     } else if (method === "age-desc") {
-      kids.sort((a, b) => b.age - a.age);
+      kids.sort((a, b) => calculateAge(b.dob) - calculateAge(a.dob));
     }
     return kids;
+  }
+
+  function calculateAge(dob) {
+    const birthDate = new Date(dob);
+    const ageDiffMs = Date.now() - birthDate.getTime();
+    const ageDate = new Date(ageDiffMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
 
   document.getElementById("sort-options").addEventListener("change", function () {
@@ -244,11 +272,9 @@ function displayKids(kids) {
     displayKids(sortedKids);
   });
 
-  // Load and display kids on page load
   const kids = loadKids();
   displayKids(kids);
 </script>
-
 
 </body>
 </html>
