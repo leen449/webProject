@@ -1,23 +1,24 @@
-/* Dark theme classes - only targets elements we want to change */
+/* Dark theme - only essential changes */
 .dark-theme {
-    background-color: #2b2525 !important;
-    color: #f0f0f0 !important;
+    background-color: #1a1a1a;
 }
 
-.dark-theme .card {
-    background-color: #2d2d2d !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
+/* Force light text ONLY where needed */
+.dark-theme .card,
+.dark-theme .table-row,
+.dark-theme .breadcrumbs {
+    color: #f0f0f0 !important; /* Light text in containers */
 }
 
-.dark-theme .navbar {
-    background-color: #2b2525 !important;
+/* Preserve original colors everywhere else */
+.dark-theme,
+.dark-theme a:not(.navbar a),
+.dark-theme .breadcrumbs a {
+    color: inherit; /* Keeps original colors */
 }
 
-.dark-theme .table-row:hover {
-    background-color: #444 !important;
-}
-
-/* Ensures theme icons don't inherit dark text color */
-.dark-theme .theme-btn span {
+/* Navbar text - special case */
+.dark-theme .navbar,
+.dark-theme .navbar a {
     color: white !important;
 }
