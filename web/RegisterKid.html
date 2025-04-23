@@ -243,7 +243,7 @@
       const fileInput = document.getElementById("file-input");
       const profileImg = document.querySelector(".profile-upload img");
   
-      // Validation
+      
       if (!name || !dob || !gender || !weight || !height || !email || !phone) {
           alert("Please fill in all fields.");
           return;
@@ -278,15 +278,15 @@
               height,
               email,
               phone,
-              image: e.target.result // base64 image string
+              image: e.target.result 
           };
   
-          // Get existing kids or start fresh
+          
           let kids = JSON.parse(localStorage.getItem("kids")) || [];
           kids.push(newKid);
           localStorage.setItem("kids", JSON.stringify(kids));
   
-          // Redirect
+         
           window.location.href = "ParentDashBoard.html";
       };
   
