@@ -194,5 +194,126 @@
         </div>
         <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Kids from localStorage
+            const kids = JSON.parse(localStorage.getItem('kids')) || [];
+        
+            const selectChild = document.getElementById('select-child');
+            selectChild.innerHTML = `<option value="">-- Select Kid --</option>`;
+            kids.forEach(kid => {
+                const option = document.createElement('option');
+                option.value = kid.name;
+                option.textContent = kid.name;
+                selectChild.appendChild(option);
+            });
+        
+            // Activities data: name, coach, prerequisite
+            const activities = [
+                { name: 'Calligraphy', coach: 'Coach1', prereq: 'Beginner' },
+                { name: 'Planting', coach: 'Coach1', prereq: 'Beginner' },
+                { name: 'Crochet', coach: 'Coach1', prereq: 'Beginner' },
+                { name: 'Painting', coach: 'Coach2', prereq: 'Intermediate' },
+                { name: 'Basketball', coach: 'Coach2', prereq: 'Advanced' },
+                { name: 'Robotics', coach: 'Coach3', prereq: 'Intermediate' },
+                { name: 'Music', coach: 'Coach3', prereq: 'Beginner' }
+            ];
+        
+            const coachSet = new Set();
+            const prereqSet = new Set();
+            const coachSelect = document.getElementById('select-coach');
+        
+            coachSelect.innerHTML = '<option value="">-- All Coaches --</option>';
+        
+            activities.forEach(activity => {
+                if (!coachSet.has(activity.coach)) {
+                    coachSet.add(activity.coach);
+                    const opt = document.createElement('option');
+                    opt.value = activity.coach;
+                    opt.textContent = activity.coach;
+                    coachSelect.appendChild(opt);
+                }
+                prereqSet.add(activity.prereq);
+            });
+        
+            const prereqRadios = document.querySelectorAll('input[name="prerequisites"]');
+            const contentDiv = document.querySelector('.content');
+        
+            function renderActivities(filterCoach = '', filterPrereq = '') {
+                contentDiv.innerHTML = '';
+                activities.forEach(act => {
+                    if ((filterCoach && act.coach !== filterCoach) || (filterPrereq && act.prereq !== filterPrereq)) {
+                        return;
+                    }
+                    const div = document.createElement('div');
+                    div.className = 'activity';
+                    div.innerHTML = `
+                        <img src="images/kids-${act.name.toLowerCase()}.jpg" alt="${act.name}">
+                        <h3>${act.name}</h3>
+                        <p>Coach: ${act.coach}</p>
+                        <p>Prerequisites: ${act.prereq}</p>
+                        <input type="checkbox" name="activities" value="${act.name}">
+                    `;
+                    contentDiv.appendChild(div);
+                });
+            }
+        
+            // Initial render
+            renderActivities();
+        
+            // Filter behavior
+            coachSelect.addEventListener('change', () => {
+                const selectedCoach = coachSelect.value;
+                const selectedPrereq = document.querySelector('input[name="prerequisites"]:checked').value;
+                renderActivities(selectedCoach, selectedPrereq);
+            });
+        
+            prereqRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const selectedCoach = coachSelect.value;
+                    const selectedPrereq = document.querySelector('input[name="prerequisites"]:checked').value;
+                    renderActivities(selectedCoach, selectedPrereq);
+                });
+            });
+        
+            // Form validation and submission
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const selectedKid = selectChild.value;
+                const checkedActivities = [...document.querySelectorAll('input[name="activities"]:checked')];
+        
+                if (!selectedKid) {
+                    alert("Please select a kid.");
+                    return;
+                }
+        
+                if (checkedActivities.length === 0) {
+                    alert("Please select at least one activity.");
+                    return;
+                }
+        
+                const results = document.createElement('div');
+                results.innerHTML = `<h3>Enrollment Summary:</h3><p><strong>Kid:</strong> ${selectedKid}</p>`;
+                checkedActivities.forEach(cb => {
+                    const activityData = activities.find(a => a.name === cb.value);
+                    results.innerHTML += `<p>${activityData.name} - Coach: ${activityData.coach}</p>`;
+                });
+        
+                const existingResults = document.getElementById('results');
+                if (existingResults) {
+                    existingResults.remove();
+                }
+        
+                results.id = 'results';
+                document.body.appendChild(results);
+        
+                form.reset();
+                renderActivities(); // reset displayed activities
+            });
+        });
+        </script>
+        
 </body>
 </html>
