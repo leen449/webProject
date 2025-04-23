@@ -139,12 +139,34 @@
                     </optgroup>
                 </select>
                 <h4>Prerequisites</h4>
-                <input type="radio" id="beginner" name="prerequisites" value="beginner" checked>
-                <label for="beginner">Beginner</label><br>
-                <input type="radio" id="intermediate" name="prerequisites" value="intermediate">
-                <label for="intermediate">Intermediate</label><br>
-                <input type="radio" id="advanced" name="prerequisites" value="advanced">
-                <label for="advanced">Advanced</label>
+
+                <label for="age-range">Select Age Range:</label>
+                <select id="age-range">
+                  <option value="">Any</option>
+                  <option value="8-9">8–9</option>
+                  <option value="10-11">10–11</option>
+                  <option value="12-13">12–13</option>
+                  <option value="14+">14+</option>
+                </select><br><br>
+                
+                <label for="height-range">Select Height Range (cm):</label>
+                <select id="height-range">
+                  <option value="">Any</option>
+                  <option value="100-120">100–120 cm</option>
+                  <option value="121-140">121–140 cm</option>
+                  <option value="141-160">141–160 cm</option>
+                  <option value="161+">161+ cm</option>
+                </select><br><br>
+                
+                <label for="experience">Experience Level:</label>
+                <select id="experience">
+                  <option value="">Any</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+                
+                
             </div>
             
             <div class="content">
@@ -310,7 +332,7 @@
                 document.body.appendChild(results);
         
                 form.reset();
-                renderActivities(); // reset displayed activities
+                renderActivities(); 
             });
         });
         </script>
