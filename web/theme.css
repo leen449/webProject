@@ -29,10 +29,6 @@
     border: 1px solid #444;
 }
 
-.dark-theme .bar a {
-    color: #e0e0e0;
-}
-
 .dark-theme .kid-profile {
     background-color: #2a2a2a;
     border-color: #444;
@@ -143,6 +139,6 @@
 .dark-theme button:hover {
     background-color: #2d4f7a;
 }
-
-
+.dark-theme .barkiid a , .barkiid p{color: #1a1a1a!important;}
 .dark-theme .table-row:hover {background-color: #444;}
+.dark-theme .barkiid a:hover{color: #777272!important; }
