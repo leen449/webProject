@@ -98,26 +98,39 @@
 </head>
 <body>
 <script src="script.js"></script>
-<header>
-  <nav class="navbar">
+ <header>
+        <script src="script.js"></script>
+    <!-- In the <nav> section, replace the current structure with this: -->
+<nav class="navbar">
     <div class="logo">
-      <img src="images/SkillNest.png" alt="SkillNest Logo" />
-      <span>SkillNest</span>
+        <img src="images/SkillNest.png" alt="SkillNest Logo">
+        <span>SkillNest</span>
     </div>
-
+    
+    <!-- Theme toggle button -->
     <button id="themeToggle" class="theme-btn">
-      <span class="light-icon">🌞</span>
-      <span class="dark-icon" style="display:none">🌙</span>
-  </button>
+        <span class="light-icon">🌞</span>
+        <span class="dark-icon" style="display:none">🌙</span>
+    </button>
+    
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    
+    <!-- Navigation Links -->
+   <ul>
+            <li><a href="ParentDashBoard.html" accesskey="h" title="Alt + P">Parent Dashboard</a></li>
+            <li><a href="admin.html" accesskey="h" title="Alt + A">Admin Dashboard</a></li>
+            <li><a href="coaches.html" accesskey="h" title="Alt + C">Coaches</a></li>
+            <li><a href="activities.html" accesskey="h" title="Alt + A">Activities</a></li>
+            <li><a href="home.html" accesskey="h" title="Alt + H">Home</a></li>
+            
+        </ul>
+</nav>
 
-    <ul>
-      <li><a href="ParentDashBoard.html" accesskey="1">Parent Dashboard</a></li>
-      <li><a href="admin.html" accesskey="2">Admin Dashboard</a></li>
-      <li><a href="coaches.html" accesskey="3">Coaches</a></li>
-      <li><a href="activities.html" accesskey="4">Activities</a></li>
-      <li><a href="home.html" accesskey="5">Home</a></li>
-    </ul>
-  </nav>
 </header>
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
