@@ -6,8 +6,9 @@
 /* Force light text ONLY where needed */
 .dark-theme .card,
 .dark-theme .table-row,
-.dark-theme .breadcrumbs {
-    color: #f0f0f0 !important; /* Light text in containers */
+.dark-theme .breadcrumbs ,.dark-theme .coach-item , .dark-theme .kids , .dark-theme .info-section {
+    color: #f0f0f0 !important;
+    background-color: #1a1a1a; /* Light text in containers */
 }
 
 /* Preserve original colors everywhere else */
@@ -21,4 +22,124 @@
 .dark-theme .navbar,
 .dark-theme .navbar a {
     color: white !important;
+}
+.dark-theme .bar {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.dark-theme .bar a {
+    color: #e0e0e0;
+}
+
+.dark-theme .kid-profile {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.dark-theme .sort-container h2,
+.dark-theme .sort-container select {
+    color: #e0e0e0;
+}
+
+.dark-theme select {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+/* Activity Enrollment Specific */
+.dark-theme #sidebar {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+/* Target the filter heading specifically */
+.dark-theme #sidebar h3 {
+    color: #e0e0e0 !important; /* Light gray/white color */
+}
+
+.dark-theme .activity {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.dark-theme #enrollmentResults {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+/* Modal Styles */
+.dark-theme .modal-box {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.dark-theme #closeModalBtn {
+    background-color: #3a6ea5;
+}
+
+.dark-theme #closeModalBtn:hover {
+    background-color: #2d4f7a;
+}
+
+/* Form Elements */
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.dark-theme input[type="checkbox"],
+.dark-theme input[type="radio"] {
+    filter: invert(80%);
+}
+
+/* Links */
+.dark-theme a {
+    color: #6d9eeb;
+}
+
+.dark-theme a:hover {
+    color: #8ab4f8;
+}
+
+/* Breadcrumbs */
+.dark-theme .breadcrumbs a {
+    color: #6d9eeb;
+}
+
+.dark-theme .breadcrumbs li:not(:last-child)::after {
+    color: #aaa;
+}
+
+/* Tables */
+.dark-theme table {
+    background-color: #2a2a2a;
+}
+
+.dark-theme th,
+.dark-theme td {
+    border-color: #444;
+}
+
+.dark-theme th {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Buttons */
+.dark-theme button {
+    background-color: #3a6ea5;
+    color: white;
+}
+
+.dark-theme button:hover {
+    background-color: #2d4f7a;
 }
