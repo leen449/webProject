@@ -1,20 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Sample kids stored in localStorage
-    if (!localStorage.getItem('kids')) {
-        // Default kids if none in localStorage
-        localStorage.setItem('kids', JSON.stringify([{ name: "Ali" }, { name: "Sara" }, { name: "Omar" }]));
-    }
 
-    const kids = JSON.parse(localStorage.getItem('kids')); // Retrieve kids' names from localStorage
-    const activities = [
-        { id: 1, name: "Football", level: "Beginner", coach: "Coach Ahmad" },
-        { id: 2, name: "Basketball", level: "Intermediate", coach: "Coach Layla" },
-        { id: 3, name: "Swimming", level: "Advanced", coach: "Coach Fadi" },
-        { id: 4, name: "Tennis", level: "Beginner", coach: "Coach Ahmad" },
-        { id: 5, name: "Volleyball", level: "Intermediate", coach: "Coach Layla" },
-        { id: 6, name: "Baseball", level: "Advanced", coach: "Coach Fadi" },
-        { id: 7, name: "Cycling", level: "Beginner", coach: "Coach Ahmad" }
-    ];
 
     // Populate the "Select Child" dropdown from localStorage
     const childSelect = document.getElementById("select-child");
@@ -135,4 +119,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial activity render
     filterAndDisplayActivities();
-});
