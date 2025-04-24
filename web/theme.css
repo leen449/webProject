@@ -143,3 +143,6 @@
 .dark-theme button:hover {
     background-color: #2d4f7a;
 }
+
+
+.dark-theme .table-row:hover {background-color: #444;}
