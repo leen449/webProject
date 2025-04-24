@@ -15,13 +15,13 @@
       padding: 0;
     }
 
-    .container {
+    .containerkiid  { 
       display: flex;
       justify-content: space-around;
       padding: 20px;
     }
 
-    .bar {
+    .barkiid { 
       background-color: white;
       padding: 20px;
       border-radius: 8px;
@@ -30,17 +30,17 @@
       text-align: center;
     }
 
-    .bar a {
+    .barkiid a {
       text-decoration: none;
       color: black;
       font-weight: bold;
     }
 
-    .bar a:hover {
+    .barkiid a:hover {
       color: gray;
     }
 
-    .bar img {
+    .barkiid img {
       width: 80px;
       height: 80px;
       border-radius: 5px;
@@ -54,7 +54,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .kid-container {
+    .kid-containerkiid {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
@@ -79,7 +79,7 @@
       object-fit: cover;
     }
 
-    .sort-container {
+    .sort-containerkiid { 
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -138,8 +138,8 @@
   </ol>
 </nav>
 <main>
-  <div class="container">
-    <div class="bar">
+  <div class="containerkiid ">
+    <div class="barkiid">
       <h2>
         <a href="RegisterKid.html" accesskey="r">
           <img src="images/add-user.png" alt="add"/><br>Register new kid
@@ -147,7 +147,7 @@
       </h2>
       <p>Add a new kid to your family profile</p>
     </div>
-    <div class="bar">
+    <div class="barkiid">
       <h2>
         <a href="activtiyEnrollment.html" accesskey="e">
           <img src="images/evaluate.png" alt="enroll"/><br>Enroll in Activities
@@ -155,7 +155,7 @@
       </h2>
       <p>Register your kids for various Activities</p>
     </div>
-    <div class="bar">
+    <div class="barkiid">
       <h2>
         <a href="evaluateActivity.html" accesskey="v">
           <img src="images/star.png" alt="star"/><br>Evaluate Activities
@@ -165,7 +165,7 @@
     </div>
   </div>
 
-  <div class="sort-container">
+  <div class="sort-containerkiid">
     <h2>Your Kids</h2>
     <select id="sort-options" accesskey="s">
       <option value="default">Sort by:</option>
@@ -181,7 +181,7 @@
   </div>
 
   <section class="kids">
-    <div class="kid-container" id="kids-list">
+    <div class="kid-containerkiid" id="kids-list">
     
     </div>
   </section>
@@ -207,36 +207,37 @@
   <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
 </footer>
 <script>
-  function loadKids() {
-    let kids = JSON.parse(localStorage.getItem("kids"));
-    
-    if (!kids || kids.length === 0) {
-      kids = [
-        {
-          name: "Layla Nasser",
-          dob: "2015-05-12", 
-          image: "images/Layla.png", 
-          activities: "Basketball"
-        },
-        {
-          name: "Ahmed Saleh",
-          dob: "2016-07-21", 
-          image: "images/ahmed.png", 
-          activities: "Swimming"
-        },
-        {
-          name: "Sara Ahmed",
-          dob: "2017-09-10", 
-          image: "images/sara.png", 
-          activities: "Art"
-        }
-      ];
-      
-      localStorage.setItem("kids", JSON.stringify(kids));
-    }
+ function loadKids() {
+  let kids = JSON.parse(localStorage.getItem("kids"));
 
-    return kids;
+  // Only set default kids if localStorage key is completely missing (not even an empty array)
+  if (kids === null) {
+    kids = [
+      {
+        name: "Layla Nasser",
+        dob: "2015-05-12",
+        image: "images/Layla.png",
+        activities: "planting"
+      },
+      {
+        name: "Ahmed Saleh",
+        dob: "2016-07-21",
+        image: "images/ahmed.png",
+        activities: "sweing"
+      },
+      {
+        name: "Sara Ahmed",
+        dob: "2017-09-10",
+        image: "images/sara.png",
+        activities: "calligraphy"
+      }
+    ];
+    localStorage.setItem("kids", JSON.stringify(kids));
   }
+
+  return kids || [];
+}
+
 
   function displayKids(kids) {
     const container = document.getElementById("kids-list");
