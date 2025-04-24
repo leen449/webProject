@@ -64,25 +64,40 @@ text-decoration: none;
 <body>
 
 
-    <header id="top">
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/SkillNest.png" alt="SkillNest Logo">
-            <span>SkillNest</span>
-        </div>
-        <ul>
-            <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
-            <li><a href="admin.html">Admin Dashboard</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="home.html">Home</a></li>
+    <header>
+        <script src="script.js"></script>
+    <!-- In the <nav> section, replace the current structure with this: -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="images/SkillNest.png" alt="SkillNest Logo">
+        <span>SkillNest</span>
+    </div>
+    
+    <!-- Theme toggle button -->
+    <button id="themeToggle" class="theme-btn">
+        <span class="light-icon">🌞</span>
+        <span class="dark-icon" style="display:none">🌙</span>
+    </button>
+    
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    
+    <!-- Navigation Links -->
+   <ul>
+            <li><a href="ParentDashBoard.html" accesskey="p" title="Alt + P">Parent Dashboard</a></li>
+            <li><a href="admin.html" accesskey="d" title="Alt + D">Admin Dashboard</a></li>
+            <li><a href="coaches.html" accesskey="c" title="Alt + C">Coaches</a></li>
+            <li><a href="activities.html" accesskey="a" title="Alt + A">Activities</a></li>
+            <li><a href="home.html" accesskey="h" title="Alt + H">Home</a></li>
             
         </ul>
-		
-		
-    </nav>
-	
-    </header>
+</nav>
+
+</header>
 	
 	
 	
