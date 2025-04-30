@@ -15,13 +15,13 @@
       padding: 0;
     }
 
-    .containerkiid  { 
+    .container {
       display: flex;
       justify-content: space-around;
       padding: 20px;
     }
 
-    .barkiid { 
+    .bar {
       background-color: white;
       padding: 20px;
       border-radius: 8px;
@@ -30,17 +30,17 @@
       text-align: center;
     }
 
-    .barkiid a {
+    .bar a {
       text-decoration: none;
       color: black;
       font-weight: bold;
     }
 
-    .barkiid a:hover {
+    .bar a:hover {
       color: gray;
     }
 
-    .barkiid img {
+    .bar img {
       width: 80px;
       height: 80px;
       border-radius: 5px;
@@ -54,7 +54,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .kid-containerkiid {
+    .kid-container {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
@@ -79,7 +79,7 @@
       object-fit: cover;
     }
 
-    .sort-containerkiid { 
+    .sort-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -99,47 +99,36 @@
 <body>
 <script src="script.js"></script>
 <header>
-<!-- In the <nav> section, replace the current structure with this: -->
-<nav class="navbar">
-<div class="logo">
-  <img src="images/SkillNest.png" alt="SkillNest Logo">
-  <span>SkillNest</span>
-</div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/SkillNest.png" alt="SkillNest Logo" />
+      <span>SkillNest</span>
+    </div>
 
-<!-- Theme toggle button -->
-<button id="themeToggle" class="theme-btn">
-  <span class="light-icon">🌞</span>
-  <span class="dark-icon" style="display:none">🌙</span>
-</button>
+    <button id="themeToggle" class="theme-btn">
+      <span class="light-icon">🌞</span>
+      <span class="dark-icon" style="display:none">🌙</span>
+  </button>
 
-<!-- Hamburger Menu -->
-<div class="hamburger" id="hamburger">
-  <span class="bar"></span>
-  <span class="bar"></span>
-  <span class="bar"></span>
-</div>
-
-<!-- Navigation Links -->
-<ul>
-      <li><a href="ParentDashBoard.html" accesskey="p" title="Alt + P">Parent Dashboard</a></li>
-      <li><a href="admin.html" accesskey="d" title="Alt + D">Admin Dashboard</a></li>
-      <li><a href="coaches.html" accesskey="c" title="Alt + C">Coaches</a></li>
-      <li><a href="activities.html" accesskey="a" title="Alt + A">Activities</a></li>
-      <li><a href="home.html" accesskey="h" title="Alt + H">Home</a></li>
-      
-  </ul>
-</nav>
-
+    <ul>
+      <li><a href="ParentDashBoard.html" accesskey="1">Parent Dashboard</a></li>
+      <li><a href="admin.html" accesskey="2">Admin Dashboard</a></li>
+      <li><a href="coaches.html" accesskey="3">Coaches</a></li>
+      <li><a href="activities.html" accesskey="4">Activities</a></li>
+      <li><a href="home.html" accesskey="5">Home</a></li>
+    </ul>
+  </nav>
 </header>
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
       <li><a href="home.html">Home</a></li>
-      <li><a href="ParentDashBoard.html">Parent Dashboard</a></li>
+      <li> <a href="ParentDashBoard.html">Parent Dashboard</a></li>
   </ol>
 </nav>
+</nav>
 <main>
-  <div class="containerkiid ">
-    <div class="barkiid">
+  <div class="container">
+    <div class="bar">
       <h2>
         <a href="RegisterKid.html" accesskey="r">
           <img src="images/add-user.png" alt="add"/><br>Register new kid
@@ -147,7 +136,7 @@
       </h2>
       <p>Add a new kid to your family profile</p>
     </div>
-    <div class="barkiid">
+    <div class="bar">
       <h2>
         <a href="activtiyEnrollment.html" accesskey="e">
           <img src="images/evaluate.png" alt="enroll"/><br>Enroll in Activities
@@ -155,7 +144,7 @@
       </h2>
       <p>Register your kids for various Activities</p>
     </div>
-    <div class="barkiid">
+    <div class="bar">
       <h2>
         <a href="evaluateActivity.html" accesskey="v">
           <img src="images/star.png" alt="star"/><br>Evaluate Activities
@@ -165,7 +154,7 @@
     </div>
   </div>
 
-  <div class="sort-containerkiid">
+  <div class="sort-container">
     <h2>Your Kids</h2>
     <select id="sort-options" accesskey="s">
       <option value="default">Sort by:</option>
@@ -181,7 +170,7 @@
   </div>
 
   <section class="kids">
-    <div class="kid-containerkiid" id="kids-list">
+    <div class="kid-container" id="kids-list">
     
     </div>
   </section>
@@ -207,12 +196,12 @@
   <p class="copyright">Copyright © 2025 SkillNest. All rights reserved.</p>
 </footer>
 <script>
- function loadKids() {
-  let kids = JSON.parse(localStorage.getItem("kids"));
-
-  // Only set default kids if localStorage key is completely missing (not even an empty array)
-  if (kids === null) {
-    kids = [
+  function loadKids() {
+    let kids = JSON.parse(localStorage.getItem("kids"));
+    
+   
+    if (!kids || kids.length === 0) {
+      kids = [
       {
         name: "Layla Nasser",
         dob: "2015-05-12",
@@ -231,13 +220,13 @@
         image: "images/sara.png",
         activities: "calligraphy"
       }
-    ];
-    localStorage.setItem("kids", JSON.stringify(kids));
+      ];
+      
+      localStorage.setItem("kids", JSON.stringify(kids));
+    }
+
+    return kids;
   }
-
-  return kids || [];
-}
-
 
   function displayKids(kids) {
     const container = document.getElementById("kids-list");
@@ -284,6 +273,7 @@
     const sortedKids = sortKids(kids, this.value);
     displayKids(sortedKids);
   });
+
 
   const kids = loadKids();
   displayKids(kids);
